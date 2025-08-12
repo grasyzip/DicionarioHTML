@@ -1,0 +1,31 @@
+/* Estilos específicos para a página de Texto */
+:root {
+    --cor-primaria: #27ae60;
+    --cor-secundaria: #2ecc71;
+    --cor-destaque: #e74c3c;
+}
+
+.tag-name {
+    color: var(--cor-primaria);
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 0.5rem;
+}
+
+.tag-card:hover {
+    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.2);
+}
+
+nav a.ativo {
+    background-color: var(--cor-secundaria);
+}
+
+.intro {
+    background-color: #e8f5e9;
+    border-left: 5px solid var(--cor-primaria);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.tag-example {
+    border-left-color: var(--cor-secundaria);
+}

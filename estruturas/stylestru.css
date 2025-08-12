@@ -1,0 +1,32 @@
+/* estrutura.css - Estilos específicos para a página de Estrutura HTML */
+:root {
+    --cor-primaria: #16a085;
+    --cor-secundaria: #1abc9c;
+    --cor-destaque: #e74c3c;
+}
+
+.tag-name {
+    color: var(--cor-primaria);
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 0.5rem;
+}
+
+.tag-card:hover {
+    box-shadow: 0 5px 15px rgba(230, 126, 34, 0.2);
+}
+
+nav a.ativo {
+    background-color: var(--cor-secundaria);
+}
+
+.intro {
+    background-color: #fef5e7;
+    border-left: 5px solid var(--cor-primaria);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.tag-example {
+    border-left-color: var(--cor-secundaria);
+    background-color: #fdebd0;
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dicionário HTML - Formulários</title>
+    <link rel="stylesheet" href="../stylesheet.css">
+    <link rel="stylesheet" href="styleform.css">
+    <script src="../script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Tags de Formulários</h1>
+        <nav>
+            <ul>
+                <li><a href="../html.html">Home</a></li>
+                <li><a href="../estruturas/estruturas.html">Estrutura</a></li>
+                <li><a href="../texto/texto.html">Texto</a></li>
+                <li><a href="../midia/midia.html">Mídia</a></li>
+                <li><a href="../listas-tabelas/listas-tabelas.html">Listas & Tabelas</a></li>
+                <li><a href="../formularios/formularios.html" class="ativo">Formulários</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Tags para Formulários</h2>
+            <p>Estas tags são usadas para criar formulários interativos em páginas HTML.</p>
+        </section>
+
+                <div class="search-container">
+            <input type="text" id="searchInput" class="search-box" 
+                   placeholder="Pesquisar tags de texto (ex: parágrafo, título)..."
+                   aria-label="Campo de pesquisa">
+        </div>
+        
+        <!-- Mensagem para nenhum resultado -->
+        <div class="no-results" id="noResults">
+            <p>Nenhuma tag encontrada com "<span id="searchTerm"></span>"</p>
+            <p>Tente outro termo ou verifique a ortografia.</p>
+        </div>
+
+        <section class="tag-list">
+            <div class="tag-card">
+                <div class="tag-name">&lt;form&gt;</div>
+                <div class="tag-desc">Container para elementos de formulário. Define onde os dados serão enviados.</div>
+                <div class="tag-example">&lt;form action="/processar" method="post"&gt;...&lt;/form&gt;</div>
+            </div>
+            
+            <div class="tag-card">
+                <div class="tag-name">&lt;input&gt;</div>
+                <div class="tag-desc">Campo de entrada de dados. O tipo é definido pelo atributo type.</div>
+                <div class="tag-example">
+                    &lt;input type="text" name="nome" placeholder="Seu nome"&gt;<br>
+                    &lt;input type="email" name="email"&gt;<br>
+                    &lt;input type="password" name="senha"&gt;<br>
+                    &lt;input type="submit" value="Enviar"&gt;
+                </div>
+            </div>
+            
+            <div class="tag-card">
+                <div class="tag-name">&lt;textarea&gt;</div>
+                <div class="tag-desc">Área de texto multilinha.</div>
+                <div class="tag-example">&lt;textarea name="mensagem" rows="4" cols="50"&gt;Texto padrão&lt;/textarea&gt;</div>
+            </div>
+            
+            <div class="tag-card">
+                <div class="tag-name">&lt;button&gt;</div>
+                <div class="tag-desc">Define um botão clicável.</div>
+                <div class="tag-example">&lt;button type="button"&gt;Clique aqui&lt;/button&gt;</div>
+            </div>
+            
+            <div class="tag-card">
+                <div class="tag-name">&lt;select&gt; e &lt;option&gt;</div>
+                <div class="tag-desc">Cria uma lista dropdown de opções.</div>
+                <div class="tag-example">
+                    &lt;select name="cidade"&gt;<br>
+                    &nbsp;&nbsp;&lt;option value="sp"&gt;São Paulo&lt;/option&gt;<br>
+                    &nbsp;&nbsp;&lt;option value="rj"&gt;Rio de Janeiro&lt;/option&gt;<br>
+                    &lt;/select&gt;
+                </div>
+            </div>
+            
+            <div class="tag-card">
+                <div class="tag-name">&lt;label&gt;</div>
+                <div class="tag-desc">Define um rótulo para um elemento de formulário.</div>
+                <div class="tag-example">&lt;label for="nome"&gt;Nome:&lt;/label&gt; &lt;input type="text" id="nome"&gt;</div>
+            </div>
+            
+            <div class="tag-card">
+                <div class="tag-name">&lt;fieldset&gt; e &lt;legend&gt;</div>
+                <div class="tag-desc">Agrupa elementos relacionados em um formulário com uma legenda.</div>
+                <div class="tag-example">
+                    &lt;fieldset&gt;<br>
+                    &nbsp;&nbsp;&lt;legend&gt;Informações Pessoais&lt;/legend&gt;<br>
+                    &nbsp;&nbsp;&lt;label for="nome"&gt;Nome:&lt;/label&gt;<br>
+                    &nbsp;&nbsp;&lt;input type="text" id="nome"&gt;<br>
+                    &lt;/fieldset&gt;
+                </div>
+            </div>
+            
+            <div class="tag-card">
+                <div class="tag-name">&lt;datalist&gt;</div>
+                <div class="tag-desc">Fornece uma lista de opções pré-definidas para um input.</div>
+                <div class="tag-example">
+                    &lt;input list="browsers"&gt;<br>
+                    &lt;datalist id="browsers"&gt;<br>
+                    &nbsp;&nbsp;&lt;option value="Chrome"&gt;<br>
+                    &nbsp;&nbsp;&lt;option value="Firefox"&gt;<br>
+                    &lt;/datalist&gt;
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Dicionário HTML. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
