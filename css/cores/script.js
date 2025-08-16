@@ -1,136 +1,147 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Funções de conversão de cor (mantidas do script anterior)
-    function hexToRgb(hex) {
-        const bigint = parseInt(hex.slice(1), 16);
-        const r = (bigint >> 16) & 255;
-        const g = (bigint >> 8) & 255;
-        const b = bigint & 255;
-        return `rgb(${r}, ${g}, ${b})`;
+    // Funções de conversão de cor
+    function hslToRgb(h, s, l) {
+        h /= 360;
+        s /= 100;
+        l /= 100;
+
+        let r, g, b;
+
+        if (s === 0) {
+            r = g = b = l;
+        } else {
+            const hue2rgb = (p, q, t) => {
+                if (t < 0) t += 1;
+                if (t > 1) t -= 1;
+                if (t < 1 / 6) return p + (q - p) * 6 * t;
+                if (t < 1 / 2) return q;
+                if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
+                return p;
+            };
+
+            const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+            const p = 2 * l - q;
+
+            r = hue2rgb(p, q, h + 1 / 3);
+            g = hue2rgb(p, q, h);
+            b = hue2rgb(p, q, h - 1 / 3);
+        }
+
+        return `rgb(${Math.round(r * 255)}, ${Math.round(g * 255)}, ${Math.round(b * 255)})`;
     }
 
-    function rgbToHsl(r, g, b) {
-        r /= 255;
-        g /= 255;
-        b /= 255;
-        const max = Math.max(r, g, b);
-        const min = Math.min(r, g, b);
-        let h, s, l = (max + min) / 2;
-
-        if (max === min) {
-            h = s = 0; // acromático
-        } else {
-            const d = max - min;
-            s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-            switch (max) {
-                case r:
-                    h = (g - b) / d + (g < b ? 6 : 0);
-                    break;
-                case g:
-                    h = (b - r) / d + 2;
-                    break;
-                case b:
-                    h = (r - g) / d + 4;
-                    break;
-            }
-            h /= 6;
-        }
-        return `hsl(${Math.round(h * 360)}, ${Math.round(s * 100)}%, ${Math.round(l * 100)}%)`;
+    function rgbToHex(r, g, b) {
+        return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
     }
 
     // Elementos do DOM
-    const colorWheelCanvas = document.getElementById('color-wheel-canvas');
-    const colorPickerDot = document.getElementById('color-picker');
+    const hueSlider = document.getElementById('hueSlider');
+    const hueHandle = document.getElementById('hueHandle');
+    const lightnessSlider = document.getElementById('lightnessSlider');
+    const lightnessHandle = document.getElementById('lightnessHandle');
     const colorDisplay = document.getElementById('color-display');
     const hexCode = document.getElementById('hex-code');
     const rgbCode = document.getElementById('rgb-code');
     const hslCode = document.getElementById('hsl-code');
 
-    const introSection = document.querySelector('.intro');
-    const tagCards = document.querySelectorAll('.tag-card');
+    // Variáveis de estado
+    let currentHue = 0;
+    let currentLightness = 50;
+    const currentSaturation = 100; // Fixamos a saturação em 100% para simplificar
+    let isDraggingHue = false;
+    let isDraggingLightness = false;
 
-    if (colorWheelCanvas) {
-        const ctx = colorWheelCanvas.getContext('2d');
-        const size = 250;
-        colorWheelCanvas.width = size;
-        colorWheelCanvas.height = size;
-        const radius = size / 2;
+    // Atualiza a cor exibida
+    function updateColor() {
+        const hsl = `hsl(${currentHue}, ${currentSaturation}%, ${currentLightness}%)`;
+        const rgb = hslToRgb(currentHue, currentSaturation, currentLightness);
+        const [r, g, b] = rgb.match(/\d+/g).map(Number);
+        const hex = rgbToHex(r, g, b);
 
-        // Desenha a roda de cores
-        function drawColorWheel() {
-            const gradient = ctx.createConicGradient(0, radius, radius);
-            gradient.addColorStop(0, '#f00');
-            gradient.addColorStop(0.166, '#ff0');
-            gradient.addColorStop(0.333, '#0f0');
-            gradient.addColorStop(0.5, '#0ff');
-            gradient.addColorStop(0.666, '#00f');
-            gradient.addColorStop(0.833, '#f0f');
-            gradient.addColorStop(1, '#f00');
-            
-            ctx.beginPath();
-            ctx.arc(radius, radius, radius, 0, 2 * Math.PI);
-            ctx.fillStyle = gradient;
-            ctx.fill();
-            ctx.closePath();
-        }
+        colorDisplay.style.backgroundColor = hsl;
+        hexCode.textContent = hex;
+        rgbCode.textContent = rgb;
+        hslCode.textContent = hsl;
 
-        drawColorWheel();
+        // Atualiza as cores dinamicamente na página
+        document.documentElement.style.setProperty('--cor-primaria', hsl);
 
-        // Atualiza a interface com a nova cor
-        function updateColor(color) {
-            const hex = color;
-            const rgb = hexToRgb(hex);
-            const [r, g, b] = rgb.match(/\d+/g).map(Number);
-            const hsl = rgbToHsl(r, g, b);
+        // Atualiza o gradiente do slider de luminosidade
+        lightnessSlider.style.background = `linear-gradient(to right, 
+            hsl(${currentHue}, ${currentSaturation}%, 0%), 
+            hsl(${currentHue}, ${currentSaturation}%, 50%), 
+            hsl(${currentHue}, ${currentSaturation}%, 100%))`;
+    }
 
-            hexCode.textContent = hex;
-            rgbCode.textContent = rgb;
-            hslCode.textContent = hsl;
-            colorDisplay.style.backgroundColor = hex;
-
-            // Atualiza as cores dinamicamente na página
-            document.documentElement.style.setProperty('--cor-primaria', hex);
-        }
-
-        // Obtém a cor do pixel clicado
-        function getColorFromClick(event) {
-            const rect = colorWheelCanvas.getBoundingClientRect();
-            const x = event.clientX - rect.left;
-            const y = event.clientY - rect.top;
-
-            const imageData = ctx.getImageData(x, y, 1, 1).data;
-            const r = imageData[0];
-            const g = imageData[1];
-            const b = imageData[2];
-
-            const hex = "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
-            
-            updateColor(hex);
-            colorPickerDot.style.left = `${x}px`;
-            colorPickerDot.style.top = `${y}px`;
-        }
-
+    // Configura os sliders
+    function setupSlider(slider, handle, isHueSlider) {
         let isDragging = false;
 
-        colorWheelCanvas.addEventListener('mousedown', (e) => {
+        const startDrag = (e) => {
             isDragging = true;
-            getColorFromClick(e);
-        });
+            updateSlider(e, isHueSlider);
+            if (isHueSlider) isDraggingHue = true;
+            else isDraggingLightness = true;
+        };
 
-        colorWheelCanvas.addEventListener('mousemove', (e) => {
+        const drag = (e) => {
             if (isDragging) {
-                getColorFromClick(e);
+                updateSlider(e, isHueSlider);
             }
+        };
+
+        const stopDrag = () => {
+            isDragging = false;
+            if (isHueSlider) isDraggingHue = false;
+            else isDraggingLightness = false;
+        };
+
+        const updateSlider = (e, isHue) => {
+            const rect = slider.getBoundingClientRect();
+            let pos = (e.clientX - rect.left) / rect.width;
+            pos = Math.max(0, Math.min(1, pos));
+
+            const value = Math.round(pos * (isHue ? 360 : 100));
+            handle.style.left = `${pos * 100}%`;
+
+            if (isHue) {
+                currentHue = value;
+            } else {
+                currentLightness = 100 - value; // Invertemos para ir do escuro ao claro
+            }
+
+            updateColor();
+        };
+
+        // Eventos de mouse
+        slider.addEventListener('mousedown', startDrag);
+        document.addEventListener('mousemove', drag);
+        document.addEventListener('mouseup', stopDrag);
+
+        // Eventos de touch
+        slider.addEventListener('touchstart', (e) => {
+            startDrag(e.touches[0]);
         });
 
-        colorWheelCanvas.addEventListener('mouseup', () => {
-            isDragging = false;
+        document.addEventListener('touchmove', (e) => {
+            drag(e.touches[0]);
         });
-        
-        // Define a cor inicial
-        updateColor('#007bff');
+
+        document.addEventListener('touchend', stopDrag);
     }
-    
-    // Lógica para os botões de exemplo (mantida do script anterior)
+
+    // Inicializa os sliders
+    setupSlider(hueSlider, hueHandle, true);
+    setupSlider(lightnessSlider, lightnessHandle, false);
+
+    // Define a posição inicial dos handles
+    hueHandle.style.left = '0%';
+    lightnessHandle.style.left = '50%';
+
+    // Atualiza a cor inicial
+    updateColor();
+
+    // Restante do seu código (botões de exemplo, busca, etc.)
     document.querySelectorAll('.btn-exemplo').forEach(button => {
         button.addEventListener('click', () => {
             const targetId = button.getAttribute('data-target');
@@ -143,11 +154,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Função de busca (mantida do script anterior)
     const searchInput = document.getElementById('searchInput');
     const noResultsDiv = document.getElementById('noResults');
     const searchTermSpan = document.getElementById('searchTerm');
-    const tagListSection = document.querySelector('.tag-list');
+    const tagCards = document.querySelectorAll('.tag-card');
 
     function searchProperties() {
         const query = searchInput.value.toLowerCase();

@@ -9,11 +9,11 @@
 			script.js
 			stylesel.css
 
-        /layout    
+        /layout    //arrumar o segundo, não aparece tamanho
             index.html
 			script.js
 
-        /cores  //arrumar o rgb
+        /cores  //arrumar o rgb ?? ou feature
             index.html
 
         /efeitos-animacoes  
