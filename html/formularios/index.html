@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dicionário HTML - Formulários</title>
+    <link rel="stylesheet" href="../stylesheet.css">
+    <link rel="stylesheet" href="styleform.css">
+    <script src="../script.js" defer></script>
+    <script src="script.js" > </script>
+       
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Tags de Formulários</h1>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../index.html">HTML</a></li>
+                <li><a href="../estruturas/index.html">Estrutura</a></li>
+                <li><a href="../texto/index.html">Texto</a></li>
+                <li><a href="../midia/index.html">Mídia</a></li>
+                <li><a href="../listas-tabelas/index.html">Listas & Tabelas</a></li>
+                <li><a href="../formularios/index.html" class="ativo">Formulários</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Formulários</h2>
+            <p>Estas tags são usadas para criar formulários interativos em páginas HTML.</p>
+        </section>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-box" 
+                   placeholder="Pesquisar tags de formulário (ex: input, form)..."
+                   aria-label="Campo de pesquisa">
+        </div>
+        
+        <div class="no-results" id="noResults">
+            <p>Nenhuma tag encontrada com "<span id="searchTerm"></span>"</p>
+            <p>Tente outro termo ou verifique a ortografia.</p>
+        </div>
+
+        <section class="tag-list">
+            <div class="tag-card categoria">
+                <div class="tag-name">&lt;form&gt;</div>
+                <div class="tag-desc">Container para elementos de formulário. Define onde os dados serão enviados.</div>
+                <div class="tag-example">&lt;form action="/processar" method="post"&gt;...&lt;/form&gt;</div>
+                <button class="btn-exemplo" data-target="exemplo-form">Ver Exemplo</button>
+                <div id="exemplo-form" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de Formulário</h4>
+                    <form action="#" method="get">
+                        <p>Este é um formulário de exemplo.</p>
+                        <label for="username">Nome de usuário:</label><br>
+                        <input type="text" id="username" name="username"><br><br>
+                        <input type="submit" value="Enviar">
+                    </form>
+                </div>
+            </div>
+            
+            <div class="tag-card categoria">
+                <div class="tag-name">&lt;input&gt;</div>
+                <div class="tag-desc">Campo de entrada de dados. O tipo é definido pelo atributo `type`.</div>
+                <div class="tag-example">
+                    &lt;input type="text" name="nome"&gt;<br>
+                    &lt;input type="email" name="email"&gt;<br>
+                    &lt;input type="password" name="senha"&gt;<br>
+                    &lt;input type="submit" value="Enviar"&gt;
+                </div>
+                <button class="btn-exemplo" data-target="exemplo-input">Ver Exemplo</button>
+                <div id="exemplo-input" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de Campos de Input</h4>
+                    <form>
+                        <label>Texto: <input type="text" placeholder="Digite aqui"></label><br>
+                        <label>Email: <input type="email" placeholder="seu@email.com"></label><br>
+                        <label>Senha: <input type="password"></label><br>
+                        <label>Caixa de seleção: <input type="checkbox"></label><br>
+                        <label>Opção: <input type="radio" name="opcao"></label><br>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="tag-card categoria">
+                <div class="tag-name">&lt;textarea&gt;</div>
+                <div class="tag-desc">Área de texto multilinha para entrada de texto livre.</div>
+                <div class="tag-example">&lt;textarea name="mensagem" rows="4" cols="50"&gt;...&lt;/textarea&gt;</div>
+                <button class="btn-exemplo" data-target="exemplo-textarea">Ver Exemplo</button>
+                <div id="exemplo-textarea" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de Textarea</h4>
+                    <p>Deixe sua mensagem:</p>
+                    <textarea name="mensagem" rows="4" cols="30" placeholder="Escreva sua mensagem aqui..."></textarea>
+                </div>
+            </div>
+            
+            <div class="tag-card categoria">
+                <div class="tag-name">&lt;button&gt;</div>
+                <div class="tag-desc">Define um botão clicável. Pode ter tipos `submit`, `reset` ou `button`.</div>
+                <div class="tag-example">&lt;button type="button"&gt;Clique aqui&lt;/button&gt;</div>
+                <button class="btn-exemplo" data-target="exemplo-button">Ver Exemplo</button>
+                <div id="exemplo-button" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de Botão</h4>
+                    <button type="button" onclick="alert('Botão clicado!')">Clique em Mim</button>
+                </div>
+            </div>
+            
+            <div class="tag-card categoria">
+                <div class="tag-name">&lt;select&gt; e &lt;option&gt;</div>
+                <div class="tag-desc">Cria uma lista dropdown de opções selecionáveis.</div>
+                <div class="tag-example">
+                    &lt;select name="cidade"&gt;<br>
+                    &nbsp;&nbsp;&lt;option value="sp"&gt;São Paulo&lt;/option&gt;<br>
+                    &nbsp;&nbsp;&lt;option value="rj"&gt;Rio de Janeiro&lt;/option&gt;<br>
+                    &lt;/select&gt;
+                </div>
+                <button class="btn-exemplo" data-target="exemplo-select">Ver Exemplo</button>
+                <div id="exemplo-select" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de Lista Suspensa</h4>
+                    <label for="cidades">Escolha uma cidade:</label><br>
+                    <select id="cidades" name="cidade">
+                        <option value="sp">Cubatão</option>
+                        <option value="rj">Santos</option>
+                        <option value="bh">Praia Grande</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="tag-card categoria">
+                <div class="tag-name">&lt;label&gt;</div>
+                <div class="tag-desc">Define um rótulo para um elemento de formulário, melhorando a acessibilidade.</div>
+                <div class="tag-example">&lt;label for="nome"&gt;Nome:&lt;/label&gt; &lt;input type="text" id="nome"&gt;</div>
+                <button class="btn-exemplo" data-target="exemplo-label">Ver Exemplo</button>
+                <div id="exemplo-label" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de Rótulo</h4>
+                    <p>Clique no texto "Nome" para focar no campo de input.</p>
+                    <label for="nome-usuario">Nome:</label>
+                    <input type="text" id="nome-usuario">
+                </div>
+            </div>
+            
+            <div class="tag-card categoria">
+                <div class="tag-name">&lt;fieldset&gt; e &lt;legend&gt;</div>
+                <div class="tag-desc">Agrupa elementos de formulário relacionados e fornece um título para o grupo.</div>
+                <div class="tag-example">
+                    &lt;fieldset&gt;<br>
+                    &nbsp;&nbsp;&lt;legend&gt;Informações Pessoais&lt;/legend&gt;<br>
+                    &nbsp;&nbsp;...<br>
+                    &lt;/fieldset&gt;
+                </div>
+                <button class="btn-exemplo" data-target="exemplo-fieldset">Ver Exemplo</button>
+                <div id="exemplo-fieldset" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de Agrupamento</h4>
+                    <form>
+                        <fieldset>
+                            <legend>Informações de Contato</legend>
+                            <label for="email-contato">Email:</label><br>
+                            <input type="email" id="email-contato"><br>
+                            <label for="telefone">Telefone:</label><br>
+                            <input type="tel" id="telefone">
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="tag-card categoria">
+                <div class="tag-name">&lt;datalist&gt;</div>
+                <div class="tag-desc">Fornece uma lista de opções pré-definidas para um campo de input de texto.</div>
+                <div class="tag-example">
+                    &lt;input list="browsers"&gt;<br>
+                    &lt;datalist id="browsers"&gt;<br>
+                    &nbsp;&nbsp;&lt;option value="Chrome"&gt;<br>
+                    &nbsp;&nbsp;&lt;option value="Firefox"&gt;<br>
+                    &lt;/datalist&gt;
+                </div>
+                <button class="btn-exemplo" data-target="exemplo-datalist">Ver Exemplo</button>
+                <div id="exemplo-datalist" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de Datalist</h4>
+                    <p>Comece a digitar no campo para ver as sugestões:</p>
+                    <p>Lista de professores: </p>
+                    <input list="frutas" name="fruta" id="fruta-input">
+                    <datalist id="frutas">
+                        <option value="Luiz Antonio Mathias">
+                        <option value="Alexandre Sobrino">
+                        <option value="Claudio Carvalho">
+                        <option value="Mauricio Asenjo">
+                    </datalist>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="../../imgs/logo-cavalo-branco.png" alt="Unisanta Cavalo Branco" class="footer-logo">
+            </div>
+            <div class="footer-center">
+                <p>Conteúdo baseado na documentação da <a href="https://developer.mozilla.org/pt-BR/" target="_blank" rel="noopener">MDN Web Docs</a></p>
+                <p>Licença <a href="https://creativecommons.org/licenses/by-sa/2.5/" target="_blank" rel="noopener">CC-BY-SA 2.5</a></p>
+            </div>
+            <div class="footer-right">
+                <p>&copy; <span id="current-year"></span> Dicionário Web Dev</p>
+                <p>Todos os direitos reservados</p>
+                <p>Agradecimento especiais ao pessoal do setor de TI (Help-Desk) pelas ideias de cores.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

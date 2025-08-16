@@ -1,0 +1,117 @@
+/* #226918   990f0f */
+
+/* Estilos específicos para a página de Design Responsivo */
+:root {
+    --cor-primaria: #990f0f; /* Azul Google */
+    --cor-secundaria: #be4141; /* Azul mais claro */
+    --cor-destaque: #fee8e8;
+}
+
+.tag-name {
+    color: var(--cor-primaria);
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 0.5rem;
+}
+
+.tag-card:hover {
+    box-shadow: 0 5px 15px rgba(26, 115, 232, 0.2);
+}
+
+nav a.ativo {
+    background-color: var(--cor-secundaria);
+}
+
+.intro {
+    background-color: var(--cor-destaque);
+    border-left: 5px solid var(--cor-primaria);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.tag-example {
+    border-left-color: var(--cor-secundaria);
+    background-color: #fff1f1;
+}
+
+.categoria {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-top: 3px solid #f18383;
+}
+
+/* Estilos para o botão de exemplo */
+.btn-exemplo {
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    transition: background-color 0.2s;
+}
+
+.btn-exemplo:hover {
+    background-color: #b00f0f;
+}
+
+/* Estilos para a área do exemplo interativo */
+.exemplo-interativo {
+    margin-top: 1rem;
+    padding: 1.5rem;
+    background-color: #faf8f8;
+    border-radius: 6px;
+    border-left: 3px solid var(--cor-secundaria);
+}
+
+.exemplo-interativo h4 {
+    color: var(--cor-primaria);
+    margin-top: 0;
+}
+
+/* Exemplo de Media Queries */
+.breakpoint-example {
+    padding: 1rem;
+    background-color: #ffe6e6;
+    border: 1px solid var(--cor-secundaria);
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color 0.3s ease, font-size 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .breakpoint-example {
+        background-color: #ffe0e0;
+        color: #ff2222;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .breakpoint-example {
+        background-color: #f2e0e0;
+        color: #960000;
+        font-size: 1.5rem;
+    }
+}
+
+/* Exemplo de Unidades Relativas */
+.unidades-exemplo {
+    padding: 1rem;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 2vw; /* Unidade relativa à largura da viewport */
+}
+
+.quadrado-exemplo {
+    width: 50%; /* Unidade relativa ao contêiner pai */
+    height: 10vh; /* Unidade relativa à altura da viewport */
+    background-color: var(--cor-secundaria);
+    margin: 1rem auto;
+}

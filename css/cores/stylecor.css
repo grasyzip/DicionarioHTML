@@ -1,0 +1,485 @@
+/* Estilos específicos para a página de Efeitos & Animações CSS */
+:root {
+    --cor-primaria: #ff40c6; /* Tom de rosa */
+    --cor-secundaria: #ff80ce; /* Rosa mais claro */
+    --cor-destaque: #fce4ec;
+}
+
+.color-tools-container {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.color-picker-container {
+    width: 300px;
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.color-picker-container h3 {
+    margin-top: 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.color-wheel-container {
+    margin: 1rem 0;
+}
+
+.color-wheel {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: conic-gradient(
+        red, yellow, lime, cyan, blue, magenta, red
+    );
+    position: relative;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.color-picker {
+    width: 10px;
+    height: 10px;
+    border: 2px solid white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.color-input-section {
+    margin: 1.5rem 0;
+}
+
+.color-input-group {
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+#color-input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+}
+
+#color-ok {
+    padding: 0.5rem 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.html5-colors {
+    margin: 1.5rem 0;
+}
+
+.color-display {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 1rem;
+}
+
+#html5-color {
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+}
+
+.selected-color-info {
+    margin: 1.5rem 0;
+}
+
+.color-display-container {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.color-display {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 1rem;
+}
+
+.color-text-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.text-option {
+    padding: 0.5rem;
+    margin: 0.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.text-option:hover {
+    transform: scale(1.02);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.black-text {
+    background-color: #000;
+    color: white;
+}
+
+.black-text-shadow {
+    background-color: #000;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.white-text {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ddd;
+}
+
+.white-text-shadow {
+    background-color: #fff;
+    color: #000;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+    border: 1px solid #ddd;
+}
+
+.color-codes {
+    font-family: monospace;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.color-codes div {
+    margin: 0.3rem 0;
+}
+
+.color-shades {
+    margin-top: 1.5rem;
+}
+
+.shades-grid {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 0.3rem;
+    margin-top: 0.5rem;
+}
+
+.shade-row {
+    display: contents;
+}
+
+.shade-row span:first-child {
+    text-align: right;
+    padding-right: 0.5rem;
+}
+
+.shade-box {
+    width: 100%;
+    height: 20px;
+    border: 1px solid #ddd;
+}
+
+.shade-row span:last-child {
+    font-family: monospace;
+    font-size: 0.8rem;
+    padding-left: 0.5rem;
+}
+
+.conteudo {
+    flex: 1;
+}
+
+
+
+.tag-name {
+    color: var(--cor-primaria);
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 0.5rem;
+}
+
+.tag-card:hover {
+    box-shadow: 0 5px 15px rgba(255, 64, 129, 0.2);
+}
+
+nav a.ativo {
+    background-color: var(--cor-secundaria);
+}
+
+.intro {
+    background-color: var(--cor-destaque);
+    border-left: 5px solid var(--cor-primaria);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.tag-example {
+    border-left-color: var(--cor-secundaria);
+    background-color: #ffe6f0;
+}
+
+.categoria {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-top: 3px solid #407947;
+}
+
+/* Estilos para o botão de exemplo */
+.btn-exemplo {
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    transition: background-color 0.2s;
+}
+
+.btn-exemplo:hover {
+    background-color: #d12e62;
+}
+
+/* Estilos para a área do exemplo interativo */
+.exemplo-interativo {
+    margin-top: 1rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    border-left: 3px solid var(--cor-secundaria);
+}
+
+.exemplo-interativo h4 {
+    color: var(--cor-primaria);
+    margin-top: 0;
+}
+
+/* Exemplo de Transição */
+.transition-box {
+    width: 100px;
+    height: 100px;
+    background-color: var(--cor-primaria);
+    margin: 1rem auto;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.transition-box:hover {
+    background-color: var(--cor-secundaria);
+    transform: scale(1.1);
+}
+
+/* Exemplo de Animação e Transformação */
+.demo-box {
+    width: 100px;
+    height: 100px;
+    background-color: var(--cor-primaria);
+    margin: 1rem auto;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.control-btn {
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.control-btn:hover {
+    background-color: #d12e62;
+}
+
+/* Animações CSS */
+@keyframes rotate-keyframes {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-keyframes {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Classes de animação aplicadas com JavaScript */
+.rotate-animation {
+    animation: rotate-keyframes 2s linear infinite;
+}
+
+.pulse-animation {
+    animation: pulse-keyframes 1.5s ease-in-out infinite;
+}
+
+/* Estilos específicos para a página de Cores & Tipografia */
+:root {
+    --cor-primaria: #007bff; /* Azul */
+    --cor-secundaria: #0056b3; /* Azul mais escuro */
+    --cor-destaque: #eaf5ff;
+}
+
+.main-container {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.color-picker-container {
+    width: 300px;
+    flex-shrink: 0;
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: fit-content;
+}
+
+.color-wheel-container {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 1rem auto;
+}
+
+#color-wheel-canvas {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    cursor: crosshair;
+}
+
+.color-picker {
+    width: 10px;
+    height: 10px;
+    border: 2px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.selected-color-info {
+    margin-top: 1.5rem;
+}
+
+.color-display-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#color-display {
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    margin-right: 1rem;
+    background-color: var(--cor-primaria);
+}
+
+.color-codes {
+    font-family: monospace;
+    font-size: 0.9rem;
+}
+.color-codes div {
+    margin: 0.3rem 0;
+}
+
+.tag-list {
+    flex-grow: 1;
+}
+
+/* Estilos existentes */
+.tag-name {
+    color: var(--cor-primaria);
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 0.5rem;
+}
+
+.tag-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
+}
+
+nav a.ativo {
+    background-color: var(--cor-secundaria);
+}
+
+.intro {
+    background-color: var(--cor-destaque);
+    border-left: 5px solid var(--cor-primaria);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.tag-example {
+    border-left-color: var(--cor-secundaria);
+    background-color: #f1f7ff;
+}
+
+.btn-exemplo {
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    transition: background-color 0.2s;
+}
+
+.btn-exemplo:hover {
+    background-color: #004d9c;
+}
+
+.exemplo-interativo {
+    margin-top: 1rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    border-left: 3px solid var(--cor-secundaria);
+}
+
+.exemplo-interativo h4 {
+    color: var(--cor-primaria);
+    margin-top: 0;
+}

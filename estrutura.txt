@@ -1,0 +1,81 @@
+/dicionario
+//adiconar mais cards/paginas de Bootstrap, React
+
+    /css  //arrumar uma
+        stylesheet.css
+        script.js
+        /seletores     
+            index.html
+			script.js
+			stylesel.css
+
+        /layout    
+            index.html
+			script.js
+
+        /cores  //arrumar o rgb
+            index.html
+
+        /efeitos-animacoes  
+            index.html
+
+        /responsivo     
+            index.html
+
+    /imgs
+        html.jpg
+        css.jpg
+        js.jpg
+        logo-cavalo-branco.png
+
+    /html    //feitos
+        index.html
+        stylesheet.css
+        script.js
+
+        /estruturas
+            index.html
+            styletru.css
+
+        /formularios
+            index.html
+            styleform.css
+
+        /listas-tabelas
+            index.html
+            stylelis.css
+
+        /midia
+            index.html
+            stylemd.css
+            
+        /texto
+            index.html
+            styletxt.css
+
+    /javascript  //fazer ainda
+        index.html      //trocar de cor
+        stylesheet.css
+        script.js       //amarelo e preto
+
+        /sintaxe
+            index.html
+
+        /manipulacao
+            index.html
+
+        /eventos
+            index.html
+
+        /funcoes
+            index.html
+
+        /objetos
+            index.html
+
+        /async
+            index.html
+
+    index.html
+	stylesheet.css
+	script.js

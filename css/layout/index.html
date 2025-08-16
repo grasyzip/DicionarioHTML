@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout CSS | Dicionário CSS</title>
+    <link rel="stylesheet" href="../stylesheet.css">
+    <link rel="stylesheet" href="stylelay.css">
+    <script src="../script.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Layout CSS</h1>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../index.html">CSS</a></li>
+                <li><a href="../seletores/index.html">Seletores</a></li>
+                <li><a href="index.html" class="ativo">Layout</a></li>
+                <li><a href="../cores/index.html">Cores & Tipografia</a></li>
+                <li><a href="../efeitos/index.html">Efeitos & Animações</a></li>
+                <li><a href="../responsivo/index.html">Design Responsivo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="conteudo">
+        <section class="intro">
+            <h2>Propriedades de Layout</h2>
+            <p>Controle a disposição dos elementos na página com estas propriedades.</p>
+        </section>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-box" 
+                   placeholder="Pesquisar propriedades de layout (ex: flex, grid)..."
+                   aria-label="Campo de pesquisa">
+        </div>
+        
+        <div class="no-results" id="noResults">
+            <p>Nenhuma propriedade encontrada com "<span id="searchTerm"></span>"</p>
+            <p>Tente outro termo ou verifique a ortografia.</p>
+        </div>
+
+        <section class="tag-list">
+            <div class="tag-card categoria">
+                <div class="tag-name"><code>display: block;</code></div>
+                <div class="tag-desc">O elemento ocupa a largura total disponível e inicia em uma nova linha.</div>
+                <div class="tag-example"><code>div { display: block; }</code></div>
+            </div>
+
+            <div class="tag-card categoria">
+                <div class="tag-name"><code>display: inline;</code></div>
+                <div class="tag-desc">O elemento ocupa apenas a largura necessária e não quebra a linha.</div>
+                <div class="tag-example"><code>span { display: inline; }</code></div>
+            </div>
+
+            <div class="tag-card categoria">
+                <div class="tag-name"><code>justify-content</code></div>
+                <div class="tag-desc">Alinha os itens flex no eixo principal (horizontal por padrão).</div>
+                <div class="tag-example"><code>justify-content: center;</code></div>
+            </div>
+            
+            <div class="tag-card categoria">
+                <div class="tag-name"><code>align-items</code></div>
+                <div class="tag-desc">Alinha os itens flex no eixo cruzado (vertical por padrão).</div>
+                <div class="tag-example"><code>align-items: stretch;</code></div>
+            </div>
+
+            <div class="tag-card categoria">
+                <div class="tag-name"><code>flex-direction</code></div>
+                <div class="tag-desc">Define a direção do eixo principal (linha ou coluna).</div>
+                <div class="tag-example"><code>flex-direction: column;</code></div>
+            </div>
+
+            <div class="tag-card categoria">
+                <div class="tag-name"><code>grid-template-columns</code></div>
+                <div class="tag-desc">Define o número e tamanho das colunas no layout de grid.</div>
+                <div class="tag-example"><code>grid-template-columns: 1fr 1fr;</code></div>
+            </div>
+
+            <div class="tag-card categoria">
+                <div class="tag-name"><code>grid-gap</code></div>
+                <div class="tag-desc">Cria espaçamento entre as linhas e colunas do grid.</div>
+                <div class="tag-example"><code>grid-gap: 20px;</code></div>
+            </div>
+            
+            <div class="tag-card categoria">
+                <div class="tag-name"><code>grid-area</code></div>
+                <div class="tag-desc">Atribui um nome a uma área do grid para fácil posicionamento.</div>
+                <div class="tag-example"><code>grid-area: header;</code></div>
+            </div>
+
+            <div class="tag-card categoria">
+                <div class="tag-name"><code>display: flex;</code></div>
+                <div class="tag-desc">Habilita o contexto flexbox para o container, alinhando itens em uma direção.</div>
+                <div class="tag-example"><code>.container { display: flex; }</code></div>
+                <button class="btn-exemplo" data-target="exemplo-flex">Ver Exemplo</button>
+                <div id="exemplo-flex" class="exemplo-interativo" style="display:none;">
+                    <h4>Exemplo de Flexbox</h4>
+                    <p>Os itens se ajustam em uma linha.</p>
+                    <div class="exemplo-box flex-box">
+                        <div class="flex-item">Item 1</div>
+                        <div class="flex-item">Item 2</div>
+                        <div class="flex-item">Item 3</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tag-card categoria">
+                <div class="tag-name"><code>display: grid;</code></div>
+                <div class="tag-desc">Habilita o contexto grid para o container, para criar layouts complexos em duas dimensões.</div>
+                <div class="tag-example"><code>.container { display: grid; }</code></div>
+                <button class="btn-exemplo" data-target="exemplo-grid">Ver Exemplo</button>
+                <div id="exemplo-grid" class="exemplo-interativo" style="display:none;">
+                    <h4>Exemplo de Grid</h4>
+                    <p>Os itens são organizados em uma grade de colunas e linhas.</p>
+                    <div class="exemplo-box grid-box">
+                        <div class="grid-item">1</div>
+                        <div class="grid-item">2</div>
+                        <div class="grid-item">3</div>
+                        <div class="grid-item">4</div>
+                        <div class="grid-item">5</div>
+                        <div class="grid-item">6</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="../imgs/logo-cavalo-branco.png" alt="Unisanta Cavalo Branco" class="footer-logo">
+            </div>
+            <div class="footer-center">
+                <p>Conteúdo baseado na documentação da <a href="https://developer.mozilla.org/pt-BR/" target="_blank" rel="noopener">MDN Web Docs</a></p>
+                <p>Licença <a href="https://creativecommons.org/licenses/by-sa/2.5/" target="_blank" rel="noopener">CC-BY-SA 2.5</a></p>
+            </div>
+            <div class="footer-right">
+                <p>&copy; <span id="current-year"></span> Dicionário Web Dev</p>
+                <p>Todos os direitos reservados</p>
+                <p>Agradecimento especiais ao pessoal do setor de TI (Help-Desk) pelas ideias de cores.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,146 @@
+/* Estilos específicos para a página de Efeitos & Animações CSS */
+:root {
+    --cor-primaria: #ff4081; /* Tom de rosa */
+    --cor-secundaria: #ff80ab; /* Rosa mais claro */
+    --cor-destaque: #fce4ec;
+}
+
+.tag-name {
+    color: var(--cor-primaria);
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 0.5rem;
+}
+
+.tag-card:hover {
+    box-shadow: 0 5px 15px rgba(255, 64, 129, 0.2);
+}
+
+nav a.ativo {
+    background-color: var(--cor-secundaria);
+}
+
+.intro {
+    background-color: var(--cor-destaque);
+    border-left: 5px solid var(--cor-primaria);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.tag-example {
+    border-left-color: var(--cor-secundaria);
+    background-color: #ffe6f0;
+}
+
+.categoria {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-top: 3px solid #407947;
+}
+
+/* Estilos para o botão de exemplo */
+.btn-exemplo {
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    transition: background-color 0.2s;
+}
+
+.btn-exemplo:hover {
+    background-color: #d12e62;
+}
+
+/* Estilos para a área do exemplo interativo */
+.exemplo-interativo {
+    margin-top: 1rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    border-left: 3px solid var(--cor-secundaria);
+}
+
+.exemplo-interativo h4 {
+    color: var(--cor-primaria);
+    margin-top: 0;
+}
+
+/* Exemplo de Transição */
+.transition-box {
+    width: 100px;
+    height: 100px;
+    background-color: var(--cor-primaria);
+    margin: 1rem auto;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.transition-box:hover {
+    background-color: var(--cor-secundaria);
+    transform: scale(1.1);
+}
+
+/* Exemplo de Animação e Transformação */
+.demo-box {
+    width: 100px;
+    height: 100px;
+    background-color: var(--cor-primaria);
+    margin: 1rem auto;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.control-btn {
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.control-btn:hover {
+    background-color: #d12e62;
+}
+
+/* Animações CSS */
+@keyframes rotate-keyframes {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-keyframes {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Classes de animação aplicadas com JavaScript */
+.rotate-animation {
+    animation: rotate-keyframes 2s linear infinite;
+}
+
+.pulse-animation {
+    animation: pulse-keyframes 1.5s ease-in-out infinite;
+}

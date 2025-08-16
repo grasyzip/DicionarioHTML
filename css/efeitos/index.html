@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efeitos & Animações | Dicionário CSS</title>
+    <link rel="stylesheet" href="../stylesheet.css">
+    <link rel="stylesheet" href="styleef.css">
+    <script src="../script.js" defer></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Efeitos & Animações</h1>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../index.html">CSS</a></li>
+                <li><a href="../seletores/index.html">Seletores</a></li>
+                <li><a href="../layout/index.html">Layout</a></li>
+                <li><a href="../cores/index.html">Cores & Tipografia</a></li>
+                <li><a href="index.html" class="ativo">Efeitos & Animações</a></li>
+                <li><a href="../responsivo/index.html">Design Responsivo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <seciton class="conteudo">
+        <section class="intro">
+            <h2>Efeitos e Animações CSS</h2>
+            <p>Propriedades para criar interações e movimentos fluidos em sua página web.</p>
+        </section>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-box" 
+                   placeholder="Pesquisar propriedades (ex: transition, transform)..."
+                   aria-label="Campo de pesquisa">
+        </div>
+        
+        <div class="no-results" id="noResults">
+            <p>Nenhuma propriedade encontrada com "<span id="searchTerm"></span>"</p>
+            <p>Tente outro termo ou verifique a ortografia.</p>
+        </div>
+
+        <section class="tag-list">
+            <div class="tag-card categoria">
+                <div class="tag-name">Transições</div>
+                <div class="tag-desc">Criam um efeito de mudança suave de um estado para outro.</div>
+                <div class="tag-example">
+                    <code>transition: property duration timing-function delay;</code>
+                </div>
+                <button class="btn-exemplo" data-target="exemplo-transition">Ver Exemplo</button>
+                <div id="exemplo-transition" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de Transição</h4>
+                    <p>Passe o mouse sobre a caixa para ver a transição de cor e tamanho.</p>
+                    <div class="transition-box"></div>
+                </div>
+            </div>
+
+            <div class="tag-card categoria">
+                <div class="tag-name">Transformações</div>
+                <div class="tag-desc">Permitem alterar a forma, posição e rotação de um elemento.</div>
+                <div class="tag-example">
+                    <code>transform: rotate(45deg);</code><br>
+                    <code>transform: scale(1.2);</code><br>
+                    <code>transform: translateX(50px);</code>
+                </div>
+                <button class="btn-exemplo" data-target="exemplo-transform">Ver Exemplo</button>
+                <div id="exemplo-transform" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de Transformação</h4>
+                    <p>Clique nos botões para aplicar diferentes transformações na caixa.</p>
+                    <div class="transform-container">
+                        <div id="transform-box" class="demo-box">Caixa</div>
+                        <div class="controls">
+                            <button class="control-btn" onclick="document.getElementById('transform-box').style.transform = 'rotate(45deg)'">Rotacionar</button>
+                            <button class="control-btn" onclick="document.getElementById('transform-box').style.transform = 'scale(1.2)'">Aumentar</button>
+                            <button class="control-btn" onclick="document.getElementById('transform-box').style.transform = 'translateX(50px)'">Mover</button>
+                            <button class="control-btn" onclick="document.getElementById('transform-box').style.transform = 'none'">Resetar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tag-card categoria">
+                <div class="tag-name">Animações</div>
+                <div class="tag-desc">Sequência de estilos que criam movimento contínuo ou em loop.</div>
+                <div class="tag-example">
+                    <code>@keyframes nomeDaAnimacao { ... }</code><br>
+                    <code>animation: nomeDaAnimacao 2s infinite;</code>
+                </div>
+                <button class="btn-exemplo" data-target="exemplo-animation">Ver Exemplo</button>
+                <div id="exemplo-animation" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de Animação</h4>
+                    <p>Clique para iniciar ou parar as animações na caixa.</p>
+                    <div class="animation-container">
+                        <div id="animation-box" class="demo-box">Caixa</div>
+                        <div class="controls">
+                            <button class="control-btn" onclick="document.getElementById('animation-box').classList.toggle('rotate-animation')">Rotacionar</button>
+                            <button class="control-btn" onclick="document.getElementById('animation-box').classList.toggle('pulse-animation')">Pulsar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="../imgs/logo-cavalo-branco.png" alt="Unisanta Cavalo Branco" class="footer-logo">
+            </div>
+            <div class="footer-center">
+                <p>Conteúdo baseado na documentação da <a href="https://developer.mozilla.org/pt-BR/" target="_blank" rel="noopener">MDN Web Docs</a></p>
+                <p>Licença <a href="https://creativecommons.org/licenses/by-sa/2.5/" target="_blank" rel="noopener">CC-BY-SA 2.5</a></p>
+            </div>
+            <div class="footer-right">
+                <p>&copy; <span id="current-year"></span> Dicionário Web Dev</p>
+                <p>Todos os direitos reservados</p>
+                <p>Agradecimento especiais ao pessoal do setor de TI (Help-Desk) pelas ideias de cores.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

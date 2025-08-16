@@ -1,56 +1,15 @@
-// para funcionalidade de pesquisa filtrada
-
 document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.getElementById('searchInput');
-    const tagCards = document.querySelectorAll('.tag-card');
-    const noResults = document.getElementById('noResults');
-    const tagList = document.querySelector('.tag-list');
+    // atualiza o ano no footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
     
-    function searchTags() {
-        const searchTerm = searchInput.value.toLowerCase().trim();
-        let hasMatches = false;
-        
-        // Resetar todos os cards antes de nova pesquisa
-        tagCards.forEach(card => {
-            card.classList.remove('hidden', 'match');
-        });
-        
-        // Se campo vazio, mostrar todos
-        if (searchTerm === '') {
-            noResults.classList.remove('show');
-            return;
-        }
-        
-        // Filtrar tags
-        tagCards.forEach(card => {
-            const tagName = card.querySelector('.tag-name').textContent.toLowerCase();
-            const tagDesc = card.querySelector('.tag-desc').textContent.toLowerCase();
-            
-            if (tagName.includes(searchTerm) || tagDesc.includes(searchTerm)) {
-                card.classList.add('match');
-                card.classList.remove('hidden');
-                hasMatches = true;
-            } else {
-                card.classList.add('hidden');
-            }
-        });
-        
-        // Mostrar mensagem se não houver resultados
-        noResults.classList.toggle('show', !hasMatches);
-    }
+    // ativa a página atual no menu
+    const currentPage = location.pathname.split('/').pop();
+    const links = document.querySelectorAll('.main-nav a');
     
-    // Event listeners
-    searchInput.addEventListener('input', searchTags);
-    
-    // Atalho de teclado Ctrl+K para focar na pesquisa
-    document.addEventListener('keydown', function(e) {
-        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-            e.preventDefault();
-            searchInput.focus();
+    links.forEach(link => {
+        const linkPage = link.getAttribute('href').split('/').pop();
+        if (currentPage === linkPage || (currentPage === '' && linkPage === 'index.html')) {
+            link.classList.add('ativo');
         }
     });
-    
-    // Focar na barra de pesquisa ao carregar a página
-    searchInput.focus();
-
 });

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dicionário HTML - Mídia e Incorporação</title>
+    <link rel="stylesheet" href="../stylesheet.css">
+    <link rel="stylesheet" href="stylemd.css">
+    <script src="../script.js" defer></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Tags de Mídia e Incorporação</h1>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../estruturas/index.html">Estrutura</a></li>
+                <li><a href="../texto/index.html">Texto</a></li>
+                <li><a href="index.html" class="ativo">Mídia</a></li>
+                <li><a href="../listas-tabelas/index.html">Listas & Tabelas</a></li>
+                <li><a href="../formularios/index.html">Formulários</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="conteudo">
+        <section class="intro">
+            <h2>Mídia e Incorporação</h2>
+            <p>Estas tags são usadas para incorporar imagens, vídeos, áudio e outros conteúdos multimídia em páginas HTML.</p>
+        </section>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-box" 
+                   placeholder="Pesquisar tags de mídia (ex: img, audio)..."
+                   aria-label="Campo de pesquisa">
+        </div>
+        
+        <div class="no-results" id="noResults">
+            <p>Nenhuma tag encontrada com "<span id="searchTerm"></span>"</p>
+            <p>Tente outro termo ou verifique a ortografia.</p>
+        </div>
+
+        <section class="tag-list">
+            <div class="tag-card categoria">
+                <div class="tag-name">&lt;img&gt;</div>
+                <div class="tag-desc">Insere uma imagem na página. É uma tag vazia (sem tag de fechamento).</div>
+                <div class="tag-example">&lt;img src="imagem.jpg" alt="Descrição da imagem" width="500" height="300"&gt;</div>
+                <button class="btn-exemplo" data-target="exemplo-img">Ver Exemplo</button>
+                <div id="exemplo-img" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de Imagem</h4>
+                    <img src="https://via.placeholder.com/200x150.png?text=Placeholder" alt="Imagem de exemplo" style="max-width: 100%; height: auto;">
+                </div>
+            </div>
+            
+            <div class="tag-card categoria">
+                <div class="tag-name">&lt;audio&gt;</div>
+                <div class="tag-desc">Insere conteúdo de áudio com controles de reprodução.</div>
+                <div class="tag-example">
+                    &lt;audio controls&gt;<br>
+                    &nbsp;&nbsp;&lt;source src="audio.mp3" type="audio/mpeg"&gt;<br>
+                    &nbsp;&nbsp;Seu navegador não suporta o elemento de áudio.<br>
+                    &lt;/audio&gt;
+                </div>
+                <button class="btn-exemplo" data-target="exemplo-audio">Ver Exemplo</button>
+                <div id="exemplo-audio" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de Áudio</h4>
+                    <p>Aqui você ouviria um som com o controle do navegador:</p>
+                    <audio controls style="width: 100%;">
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                        Seu navegador não suporta o elemento de áudio.
+                    </audio>
+                </div>
+            </div>
+            
+            <div class="tag-card categoria">
+                <div class="tag-name">&lt;video&gt;</div>
+                <div class="tag-desc">Insere conteúdo de vídeo com controles de reprodução.</div>
+                <div class="tag-example">
+                    &lt;video width="320" height="240" controls&gt;<br>
+                    &nbsp;&nbsp;&lt;source src="video.mp4" type="video/mp4"&gt;<br>
+                    &nbsp;&nbsp;Seu navegador não suporta o elemento de vídeo.<br>
+                    &lt;/video&gt;
+                </div>
+                <button class="btn-exemplo" data-target="exemplo-video">Ver Exemplo</button>
+                <div id="exemplo-video" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de Vídeo</h4>
+                    <p>Aqui você veria um vídeo com controles de reprodução:</p>
+                    <video width="100%" height="auto" controls poster="https://via.placeholder.com/320x240.png?text=Video+Placeholder">
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        Seu navegador não suporta o elemento de vídeo.
+                    </video>
+                </div>
+            </div>
+            
+            <div class="tag-card categoria">
+                <div class="tag-name">&lt;iframe&gt;</div>
+                <div class="tag-desc">Insere um frame embutido para incorporar outro documento HTML.</div>
+                <div class="tag-example">&lt;iframe src="https://exemplo.com" width="600" height="400"&gt;&lt;/iframe&gt;</div>
+                <button class="btn-exemplo" data-target="exemplo-iframe">Ver Exemplo</button>
+                <div id="exemplo-iframe" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de Iframe</h4>
+                    <iframe src="https://developer.mozilla.org/pt-BR/" width="100%" height="300px" style="border: 1px solid var(--cor-destaque);"></iframe>
+                </div>
+            </div>
+            
+            <div class="tag-card categoria">
+                <div class="tag-name">&lt;picture&gt;</div>
+                <div class="tag-desc">Container para múltiplas fontes de imagem, permitindo designs responsivos.</div>
+                <div class="tag-example">
+                    &lt;picture&gt;<br>
+                    &nbsp;&nbsp;&lt;source media="(min-width: 800px)" srcset="grande.jpg"&gt;<br>
+                    &nbsp;&nbsp;&lt;source media="(min-width: 400px)" srcset="media.jpg"&gt;<br>
+                    &nbsp;&nbsp;&lt;img src="pequena.jpg" alt="Imagem responsiva"&gt;<br>
+                    &lt;/picture&gt;
+                </div>
+                <button class="btn-exemplo" data-target="exemplo-picture">Ver Exemplo</button>
+                <div id="exemplo-picture" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de Imagem Responsiva</h4>
+                    <p>Redimensione a janela do navegador para ver a imagem mudar.</p>
+                    <picture>
+                        <source media="(min-width: 800px)" srcset="https://via.placeholder.com/600x200.png?text=Desktop">
+                        <source media="(min-width: 400px)" srcset="https://via.placeholder.com/400x300.png?text=Tablet">
+                        <img src="https://via.placeholder.com/200x200.png?text=Mobile" alt="Imagem responsiva" style="max-width: 100%; height: auto;">
+                    </picture>
+                </div>
+            </div>
+            
+            <div class="tag-card categoria">
+                <div class="tag-name">&lt;figure&gt; e &lt;figcaption&gt;</div>
+                <div class="tag-desc">Agrupa conteúdo multimídia com uma legenda opcional.</div>
+                <div class="tag-example">
+                    &lt;figure&gt;<br>
+                    &nbsp;&nbsp;&lt;img src="paisagem.jpg" alt="Paisagem bonita"&gt;<br>
+                    &nbsp;&nbsp;&lt;figcaption&gt;Uma bela paisagem ao pôr do sol&lt;/figcaption&gt;<br>
+                    &lt;/figure&gt;
+                </div>
+                <button class="btn-exemplo" data-target="exemplo-figure">Ver Exemplo</button>
+                <div id="exemplo-figure" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de Legenda</h4>
+                    <figure>
+                        <img src="https://via.placeholder.com/250x150.png?text=Figura" alt="Figura de exemplo" style="max-width: 100%; height: auto;">
+                        <figcaption style="font-style: italic; color: #555;">Esta é uma legenda descrevendo a figura acima.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="../../imgs/logo-cavalo-branco.png" alt="Unisanta Cavalo Branco" class="footer-logo">
+            </div>
+            <div class="footer-center">
+                <p>Conteúdo baseado na documentação da <a href="https://developer.mozilla.org/pt-BR/" target="_blank" rel="noopener">MDN Web Docs</a></p>
+                <p>Licença <a href="https://creativecommons.org/licenses/by-sa/2.5/" target="_blank" rel="noopener">CC-BY-SA 2.5</a></p>
+            </div>
+            <div class="footer-right">
+                <p>&copy; <span id="current-year"></span> Dicionário Web Dev</p>
+                <p>Todos os direitos reservados</p>
+                <p>Agradecimento especiais ao pessoal do setor de TI (Help-Desk) pelas ideias de cores.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
