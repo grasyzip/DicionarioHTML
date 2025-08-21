@@ -1,4 +1,3 @@
-/* Estilos para a funcionalidade de pesquisa */
 .search-container {
     margin: 1.5rem 0 2.5rem;
     position: relative;
@@ -37,7 +36,7 @@
     opacity: 0.6;
 }
 
-/* Estilo quando não há resultados */
+/* quando não há resultados */
 .no-results {
     text-align: center;
     padding: 3rem;
@@ -53,7 +52,7 @@
     display: block;
 }
 
-/* Estilo para tags que não correspondem à pesquisa */
+/* tags que não correspondem à pesquisa */
 .tag-card {
     transition: all 0.3s ease;
 }
@@ -62,7 +61,7 @@
     display: none;
 }
 
-/* Efeito para tags que correspondem à pesquisa */
+/* tags que correspondem à pesquisa */
 .tag-card.match {
     animation: fadeIn 0.5s ease;
 }

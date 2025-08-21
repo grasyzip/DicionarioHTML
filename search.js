@@ -8,18 +8,18 @@ document.addEventListener('DOMContentLoaded', function() {
         const searchTerm = searchInput.value.toLowerCase().trim();
         let hasMatches = false;
         
-        // Resetar todos os cards antes de nova pesquisa
+        // resetar todos os cards antes de nova pesquisa
         tagCards.forEach(card => {
             card.classList.remove('hidden', 'match');
         });
         
-        // Se campo vazio, mostrar todos
+        // campo vazio, mostrar todos
         if (searchTerm === '') {
             noResults.classList.remove('show');
             return;
         }
         
-        // Filtrar tags
+        // filtra tags
         tagCards.forEach(card => {
             const tagName = card.querySelector('.tag-name').textContent.toLowerCase();
             const tagDesc = card.querySelector('.tag-desc').textContent.toLowerCase();
@@ -33,14 +33,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Mostrar mensagem se não houver resultados
+        // mensagem se não houver resultados
         noResults.classList.toggle('show', !hasMatches);
     }
     
-    // Event listeners
+    // event listeners
     searchInput.addEventListener('input', searchTags);
     
-    // Atalho de teclado Ctrl+K para focar na pesquisa
+    // atalho de teclado Ctrl+K para focar na pesquisa
     document.addEventListener('keydown', function(e) {
         if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
             e.preventDefault();
@@ -48,6 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Focar na barra de pesquisa ao carregar a página
+    // focar na barra de pesquisa ao carregar a página
     searchInput.focus();
 });

@@ -1,22 +1,21 @@
-/* 226918 específicos para a página de Layout CSS */
 :root {
-    --cor-primaria: #226918; /* Tom de azul */
-    --cor-secundaria: #46a03a; /* Azul mais claro */
-    --cor-destaque: #adb5bd;
+    --cor-primaria: #226918;
+    --cor-secundaria: #46a03a;
+    --cor-destaque: #adb5bd
 }
 
 .tag-name {
     color: var(--cor-primaria);
     border-bottom: 2px solid var(--cor-secundaria);
-    padding-bottom: 0.5rem;
+    padding-bottom: .5rem
 }
 
 .tag-card:hover {
-    box-shadow: 0 5px 15px rgba(41, 101, 241, 0.2);
+    box-shadow: 0 5px 15px rgba(41, 101, 241, .2)
 }
 
 nav a.ativo {
-    background-color: var(--cor-secundaria);
+    background-color: var(--cor-secundaria)
 }
 
 .intro {
@@ -24,12 +23,12 @@ nav a.ativo {
     border-left: 5px solid var(--cor-primaria);
     border-radius: 8px;
     padding: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2rem
 }
 
 .tag-example {
     border-left-color: var(--cor-secundaria);
-    background-color: #e3ffe3;
+    background-color: #e3ffe3
 }
 
 .categorias {
@@ -40,75 +39,72 @@ nav a.ativo {
 }
 
 .categoria {
-    background-color: #ffffff;
+    background-color: #fff;
     border-radius: 8px;
     padding: 1.5rem;
     margin-bottom: 2rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    border-top: 3px solid #407947;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+    border-top: 3px solid #407947
 }
 
-/* Estilos para o botão de exemplo */
 .btn-exemplo {
     background-color: var(--cor-primaria);
-    color: white;
+    color: #fff;
     border: none;
-    padding: 0.5rem 1rem;
+    padding: .5rem 1rem;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: .9rem;
     margin-top: 1rem;
-    transition: background-color 0.2s;
+    transition: background-color .2s
 }
 
 .btn-exemplo:hover {
-    background-color: #0e7528;
+    background-color: #0e7528
 }
 
-/* Estilos para a área do exemplo interativo */
 .exemplo-interativo {
     margin-top: 1rem;
     padding: 1rem;
     background-color: #f9f8fa;
     border-radius: 6px;
-    border-left: 3px solid var(--cor-secundaria);
+    border-left: 3px solid var(--cor-secundaria)
 }
 
 .exemplo-interativo h4 {
     color: var(--cor-primaria);
-    margin-top: 0;
+    margin-top: 0
 }
 
-/* Estilos para as caixas de exemplo */
 .exemplo-box {
     padding: 1rem;
     border: 1px dashed #adbdae;
     border-radius: 4px;
-    margin-top: 1rem;
+    margin-top: 1rem
 }
 
 .flex-box {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around
 }
 
 .flex-item {
     background-color: var(--cor-secundaria);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
+    color: #fff;
+    padding: .5rem 1rem;
+    border-radius: 4px
 }
 
 .grid-box {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
+    gap: .5rem
 }
 
 .grid-item {
     background-color: var(--cor-secundaria);
-    color: white;
-    padding: 0.5rem;
+    color: #fff;
+    padding: .5rem;
     text-align: center;
-    border-radius: 4px;
+    border-radius: 4px
 }

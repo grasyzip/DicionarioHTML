@@ -1,22 +1,21 @@
-/* Estilos específicos para a página de Texto */
 :root {
     --cor-primaria: #27ae60;
     --cor-secundaria: #2ecc71;
-    --cor-destaque: #3ce789;
+    --cor-destaque: #3ce789
 }
 
 .tag-name {
     color: var(--cor-primaria);
     border-bottom: 2px solid var(--cor-secundaria);
-    padding-bottom: 0.5rem;
+    padding-bottom: .5rem
 }
 
 .tag-card:hover {
-    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.2);
+    box-shadow: 0 5px 15px rgba(39, 174, 96, .2)
 }
 
 nav a.ativo {
-    background-color: var(--cor-secundaria);
+    background-color: var(--cor-secundaria)
 }
 
 .intro {
@@ -24,12 +23,12 @@ nav a.ativo {
     border-left: 5px solid var(--cor-primaria);
     border-radius: 8px;
     padding: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2rem
 }
 
 .tag-example {
     border-left-color: var(--cor-secundaria);
-    background-color: #efffec;
+    background-color: #efffec
 }
 
 .categorias {
@@ -40,67 +39,68 @@ nav a.ativo {
 }
 
 .categoria {
-    background-color: #ffffff;
+    background-color: #fff;
     border-radius: 8px;
     padding: 1.5rem;
     margin-bottom: 2rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    border-top: 3px solid #95f183;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+    border-top: 3px solid #95f183
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
+@media (max-width:768px) {
     .conteudo {
-        padding: 1rem;
+        padding: 1rem
     }
-    
+
     .categoria {
-        padding: 1rem;
+        padding: 1rem
     }
-    
+
     .intro {
-        padding: 1rem;
+        padding: 1rem
     }
 }
 
-/* Estilos para o botão de exemplo */
 .btn-exemplo {
     background-color: var(--cor-primaria);
-    color: white;
+    color: #fff;
     border: none;
-    padding: 0.5rem 1rem;
+    padding: .5rem 1rem;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: .9rem;
     margin-top: 1rem;
-    transition: background-color 0.2s;
+    transition: background-color .2s
 }
 
 .btn-exemplo:hover {
-    background-color: #1f8b4d;
+    background-color: #1f8b4d
 }
 
-/* Estilos para a área do exemplo interativo */
 .exemplo-interativo {
     margin-top: 1rem;
     padding: 1rem;
     background-color: #f8f9fa;
     border-radius: 6px;
-    border-left: 3px solid var(--cor-secundaria);
+    border-left: 3px solid var(--cor-secundaria)
 }
 
 .exemplo-interativo h4 {
     color: var(--cor-primaria);
-    margin-top: 0;
+    margin-top: 0
 }
 
-/* Estilos adicionais para os elementos dos exemplos */
-.exemplo-interativo h1, h2, h3, h6 {
-    margin: 0.5rem 0;
+.exemplo-interativo h1,
+h2,
+h3,
+h6 {
+    margin: .5rem 0
 }
 
-.exemplo-interativo p, .exemplo-interativo blockquote, .exemplo-interativo pre {
-    margin: 0.5rem 0;
+.exemplo-interativo blockquote,
+.exemplo-interativo p,
+.exemplo-interativo pre {
+    margin: .5rem 0
 }
 
 .exemplo-interativo kbd {
@@ -108,15 +108,14 @@ nav a.ativo {
     border: 1px solid #ccc;
     border-bottom: 3px solid #ccc;
     border-radius: 4px;
-    padding: 0.2rem 0.4rem;
+    padding: .2rem .4rem;
     font-family: monospace;
-    font-size: 0.9em;
+    font-size: .9em
 }
 
 .exemplo-interativo code {
     background-color: #eee;
     border-radius: 4px;
-    padding: 0.2rem 0.4rem;
-    font-family: monospace;
+    padding: .2rem .4rem;
+    font-family: monospace
 }
-

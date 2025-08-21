@@ -1,52 +1,51 @@
-/* estrutura.css - Estilos específicos para a página de Estrutura HTML */
 :root {
     --cor-primaria: #16a085;
     --cor-secundaria: #1abc9c;
-    --cor-destaque: #6baaa5;
+    --cor-destaque: #6baaa5
 }
 
 .tag-name {
     color: var(--cor-primaria);
     border-bottom: 2px solid var(--cor-secundaria);
-    padding-bottom: 0.5rem;
+    padding-bottom: .5rem
 }
 
 .tag-card:hover {
-    box-shadow: 0 5px 15px rgba(34, 230, 181, 0.2);
+    box-shadow: 0 5px 15px rgba(34, 230, 181, .2)
 }
 
 nav a.ativo {
-    background-color: var(--cor-secundaria);
+    background-color: var(--cor-secundaria)
 }
 
 .intro {
     background-color: #f2fcf1;
     border-left: 5px solid var(--cor-primaria);
     padding: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2rem
 }
 
 .tag-example {
     border-left-color: var(--cor-secundaria);
-    background-color: #d8fcf7;
+    background-color: #d8fcf7
 }
-/* Seção de introdução */
+
 .intro {
     background-color: #f0fffc;
     padding: 1.5rem;
     border-radius: 8px;
     margin-bottom: 2rem;
-    border-left: 4px solid #2f8f72;
+    border-left: 4px solid #2f8f72
 }
 
 .intro h2 {
     color: #33755a;
-    margin-top: 0;
+    margin-top: 0
 }
 
 .intro p {
     color: #495057;
-    line-height: 1.6;
+    line-height: 1.6
 }
 
 .categorias {
@@ -57,25 +56,24 @@ nav a.ativo {
 }
 
 .categoria {
-    background-color: #ffffff;
+    background-color: #fff;
     border-radius: 8px;
     padding: 1.5rem;
     margin-bottom: 2rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    border-top: 3px solid #83f1d0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+    border-top: 3px solid #83f1d0
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
+@media (max-width:768px) {
     .conteudo {
-        padding: 1rem;
+        padding: 1rem
     }
-    
+
     .categoria {
-        padding: 1rem;
+        padding: 1rem
     }
-    
+
     .intro {
-        padding: 1rem;
+        padding: 1rem
     }
 }

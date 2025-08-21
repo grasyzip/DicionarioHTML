@@ -1,12 +1,12 @@
 :root {
- --cor-primaria: #2965f1; /* Tom de azul */
-    --cor-secundaria: #6a9bff; /* Azul mais claro */
-    --cor-destaque: #adb5bd;
+ --cor-primaria: #8029f1; /* Tom de azul */
+    --cor-secundaria: #964eee; /* Azul mais claro */
+    --cor-destaque: #9f79cd;
 }
 
 button {
     padding: 8px 15px;
-    background-color: #607D8B;
+    background-color: #4f2b92;
     color: white;
     border: none;
     border-radius: 4px;
@@ -14,7 +14,7 @@ button {
     margin: 5px;
 }
 button:hover {
-    background-color: #455A64;
+    background-color: #584564;
 }
 #resultado {
     background-color: #f4f4f4;
