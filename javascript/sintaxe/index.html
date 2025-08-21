@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sintaxe JavaScript | Dicionário JavaScript</title>
+    <link rel="stylesheet" href="../stylesheet.css">
+    <link rel="stylesheet" href="../../stylesearch.css">
+    <link rel="stylesheet" href="stylesin.css">
+    <script src="../script.js" defer></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Sintaxe JavaScript</h1>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../index.html">JavaScript</a></li>
+                <li><a href="index.html" class="ativo">Sintaxe Básica</a></li>
+                <li><a href="../manipulacao/index.html">Manipulação DOM</a></li>
+                <li><a href="../eventos/index.html">Eventos</a></li>
+                <li><a href="../funcoes/index.html">Funções</a></li>
+                <li><a href="../objetos/index.html">Objetos & Arrays</a></li>
+                <li><a href="../async/index.html">Async/Await</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="conteudo">
+            <section class="intro">
+                <h2>Sintaxe JavaScript</h2>
+                <p>Conceitos fundamentais e estruturas básicas da linguagem JavaScript.</p>
+            </section>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-box" 
+                       placeholder="Pesquisar conceitos (ex: variáveis, funções)..."
+                       aria-label="Campo de pesquisa">
+            </div>
+            
+            <div class="no-results" id="noResults">
+                <p>Nenhum conceito encontrado com "<span id="searchTerm"></span>"</p>
+                <p>Tente outro termo ou verifique a ortografia.</p>
+            </div>
+            
+            <section class="tag-list">
+                <div class="tag-card categoria">
+                    <div class="tag-name">Declaração de Variáveis (<code>let</code>, <code>const</code>, <code>var</code>)</div>
+                    <div class="tag-desc">Formas de declarar variáveis em JavaScript.</div>
+                    <div class="tag-example"><code>let nome = "João"; const PI = 3.14;</code></div>
+                    <button class="btn-exemplo" data-target="exemplo-variaveis">Ver Exemplo</button>
+                    <div id="exemplo-variaveis" class="exemplo-interativo" style="display:none;">
+                        <h4>Demonstração de Declaração de Variáveis</h4>
+                        <pre><code>// Declaração de variáveis
+                            let nome = "Maria";       // Pode ser reatribuída
+                            const PI = 3.14159;       // Não pode ser reatribuída
+                            var idade = 25;           // Forma antiga (escopo de função)
+
+                            nome = "João";            // Válido
+                            // PI = 3.15;             // Erro! Constante não pode ser alterada
+
+                            console.log(nome);        // "João"
+                            console.log(PI);          // 3.14159</code></pre>
+                        <button class="btn-executar" onclick="executarExemplo('exemplo-variaveis')">Executar Código</button>
+                        <div class="resultado" id="resultado-variaveis"></div>
+                    </div>
+                </div>
+
+                <div class="tag-card categoria">
+                            <!-- Card 1: Variáveis -->
+        <div class="card">
+            <div class="card-header">Variáveis (let, const, var)</div>
+            <div class="card-body">
+                <p>Declaração e uso de diferentes tipos de variáveis em JavaScript.</p>
+                <div class="card-code">
+// Usando let (pode ser reatribuída)<br>
+let nome = "João";<br>
+nome = "Maria"; // Válido<br><br>
+
+// Usando const (não pode ser reatribuída)<br>
+const pi = 3.14159;<br>
+// pi = 3.14; // Erro!<br><br>
+
+// Usando var (escopo de função)<br>
+var idade = 30;
+                </div>
+                <div class="card-example">
+                    <button class="card-button" onclick="exemploVariaveis()">Executar Exemplo</button>
+                    <div id="variaveis-output"></div>
+                </div>
+            </div>
+        </div>
+                </div>
+                
+                <div class="tag-card categoria">
+                    <div class="tag-name">Tipos de Dados</div>
+                    <div class="tag-desc">Tipos primitivos e objetos em JavaScript.</div>
+                    <div class="tag-example"><code>let texto = "Olá"; let numero = 42;</code></div>
+                    <button class="btn-exemplo" data-target="exemplo-tipos">Ver Exemplo</button>
+                    <div id="exemplo-tipos" class="exemplo-interativo" style="display:none;">
+                        <h4>Demonstração de Tipos de Dados</h4>
+                        <pre><code>// Tipos primitivos
+                            let texto = "JavaScript";  // String
+                            let numero = 42;          // Number
+                            let booleano = true;      // Boolean
+                            let nulo = null;          // Null
+                            let indefinido;           // Undefined
+                            let simbolo = Symbol();   // Symbol (ES6)
+
+                            // Objetos
+                            let objeto = { nome: "João" };
+                            let array = [1, 2, 3];
+                            let data = new Date();
+
+                            console.log(typeof texto);    // "string"
+                            console.log(typeof numero);   // "number"
+                            console.log(typeof nulo);     // "object" (isso é um bug conhecido)</code></pre>
+                        <button class="btn-executar" onclick="executarExemplo('exemplo-tipos')">Executar Código</button>
+                        <div class="resultado" id="resultado-tipos"></div>
+                    </div>
+                </div>
+                
+                <div class="tag-card categoria">
+                    <div class="tag-name">Operadores</div>
+                    <div class="tag-desc">Operadores aritméticos, de comparação e lógicos.</div>
+                    <div class="tag-example"><code>let soma = 5 + 3; console.log(5 === "5");</code></div>
+                    <button class="btn-exemplo" data-target="exemplo-operadores">Ver Exemplo</button>
+                    <div id="exemplo-operadores" class="exemplo-interativo" style="display:none;">
+                        <h4>Demonstração de Operadores</h4>
+                        <pre><code>// Operadores aritméticos
+                            let soma = 5 + 3;       // 8
+                            let subtracao = 5 - 3;  // 2
+                            let modulo = 10 % 3;    // 1
+
+                            // Operadores de comparação
+                            console.log(5 == "5");   // true (igualdade solta)
+                            console.log(5 === "5");  // false (igualdade estrita)
+                            console.log(5 !== "5");  // true
+
+                            // Operadores lógicos
+                            let maiorQue = 10 > 5;  // true
+                            let eLogico = true && false; // false
+                            let ouLogico = true || false; // true
+
+                            // Operador ternário
+                            let idade = 18;
+                            let status = idade >= 18 ? "Adulto" : "Menor";</code></pre>
+                        <button class="btn-executar" onclick="executarExemplo('exemplo-operadores')">Executar Código</button>
+                        <div class="resultado" id="resultado-operadores"></div>
+                    </div>
+                </div>
+                
+                <div class="tag-card categoria">
+                    <div class="tag-name">Estruturas de Controle</div>
+                    <div class="tag-desc">Condicionais e loops para controle de fluxo.</div>
+                    <div class="tag-example"><code>if (idade >= 18) {...} for (let i = 0; i < 5; i++) {...}</code></div>
+                    <button class="btn-exemplo" data-target="exemplo-controle">Ver Exemplo</button>
+                    <div id="exemplo-controle" class="exemplo-interativo" style="display:none;">
+                        <h4>Demonstração de Estruturas de Controle</h4>
+                        <pre><code>// Condicional if-else
+                            let hora = 14;
+                            if (hora < 12) {
+                                console.log("Bom dia!");
+                            } else if (hora < 18) {
+                                console.log("Boa tarde!");
+                            } else {
+                                console.log("Boa noite!");
+                            }
+
+                            // Switch-case
+                            let dia = 3;
+                            switch(dia) {
+                                case 1: console.log("Segunda"); break;
+                                case 2: console.log("Terça"); break;
+                                default: console.log("Outro dia");
+                            }
+
+                            // Loop for
+                            for (let i = 0; i < 3; i++) {
+                                console.log("Iteração " + i);
+                            }
+
+                            // Loop while
+                            let contador = 0;
+                            while (contador < 3) {
+                                console.log("Contador: " + contador);
+                                contador++;
+                            }</code></pre>
+                        <button class="btn-executar" onclick="executarExemplo('exemplo-controle')">Executar Código</button>
+                        <div class="resultado" id="resultado-controle"></div>
+                    </div>
+                </div>
+                
+                <div class="tag-card categoria">
+                    <div class="tag-name">Funções</div>
+                    <div class="tag-desc">Declaração e uso de funções em JavaScript.</div>
+                    <div class="tag-example"><code>function saudacao(nome) { return "Olá " + nome; }</code></div>
+                    <button class="btn-exemplo" data-target="exemplo-funcoes">Ver Exemplo</button>
+                    <div id="exemplo-funcoes" class="exemplo-interativo" style="display:none;">
+                        <h4>Demonstração de Funções</h4>
+                        <pre><code>// Declaração de função
+                            function soma(a, b) {
+                                return a + b;
+                            }
+
+                            // Expressão de função
+                            const multiplica = function(a, b) {
+                                return a * b;
+                            };
+
+                            // Arrow function (ES6)
+                            const divide = (a, b) => a / b;
+
+                            // Parâmetros padrão
+                            function saudacao(nome = "Visitante") {
+                                return `Olá, ${nome}!`;
+                            }
+
+                            console.log(soma(2, 3));        // 5
+                            console.log(multiplica(2, 3));  // 6
+                            console.log(saudacao("João"));  // "Olá, João!"
+                            console.log(saudacao());        // "Olá, Visitante!"</code></pre>
+                        <button class="btn-executar" onclick="executarExemplo('exemplo-funcoes')">Executar Código</button>
+                        <div class="resultado" id="resultado-funcoes"></div>
+                    </div>
+                </div>
+                
+                <div class="tag-card categoria">
+                    <div class="tag-name">Escopo</div>
+                    <div class="tag-desc">Escopo global, de função e de bloco em JavaScript.</div>
+                    <div class="tag-example"><code>let global = "acessível em qualquer lugar";</code></div>
+                    <button class="btn-exemplo" data-target="exemplo-escopo">Ver Exemplo</button>
+                    <div id="exemplo-escopo" class="exemplo-interativo" style="display:none;">
+                        <h4>Demonstração de Escopo</h4>
+                        <pre><code>// Escopo global
+                            let global = "Eu sou global";
+
+                            function testeEscopo() {
+                                // Escopo de função
+                                let funcao = "Eu sou local à função";
+                                
+                                if (true) {
+                                    // Escopo de bloco (com let/const)
+                                    let bloco = "Eu sou local ao bloco";
+                                    console.log(bloco);  // Acessível
+                                }
+                                
+                                console.log(global);    // Acessível
+                                console.log(funcao);    // Acessível
+                                // console.log(bloco);  // Erro! Não acessível
+                            }
+
+                            testeEscopo();
+                            console.log(global);        // Acessível
+                            // console.log(funcao);    // Erro! Não acessível
+                            // console.log(bloco);     // Erro! Não acessível</code></pre>
+                        <button class="btn-executar" onclick="executarExemplo('exemplo-escopo')">Executar Código</button>
+                        <div class="resultado" id="resultado-escopo"></div>
+                    </div>
+                </div>
+                
+                <div class="tag-card categoria">
+                    <div class="tag-name">Template Literals</div>
+                    <div class="tag-desc">Strings com interpolação e multi-linha (ES6).</div>
+                    <div class="tag-example"><code>`Olá ${nome}, hoje é ${new Date()}`</code></div>
+                    <button class="btn-exemplo" data-target="exemplo-template">Ver Exemplo</button>
+                    <div id="exemplo-template" class="exemplo-interativo" style="display:none;">
+                        <h4>Demonstração de Template Literals</h4>
+                        <pre><code>const nome = "Carlos";
+                            const idade = 30;
+
+                            // String tradicional
+                            let mensagem1 = "Olá " + nome + ", você tem " + idade + " anos.";
+
+                            // Template literal
+                            let mensagem2 = `Olá ${nome}, você tem ${idade} anos.`;
+
+                            // Multi-linha
+                            let html = `
+                            &lt;div class="usuario"&gt;
+                                &lt;h2&gt;${nome}&lt;/h2&gt;
+                                &lt;p&gt;Idade: ${idade}&lt;/p&gt;
+                            &lt;/div&gt;
+                            `;
+
+                            console.log(mensagem1);
+                            console.log(mensagem2);
+                            console.log(html);</code></pre>
+                        <button class="btn-executar" onclick="executarExemplo('exemplo-template')">Executar Código</button>
+                        <div class="resultado" id="resultado-template"></div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="../../imgs/logo-cavalo-branco.png" alt="Unisanta Cavalo Branco" class="footer-logo">
+            </div>
+            <div class="footer-center">
+                <p>Conteúdo baseado na documentação da <a href="https://developer.mozilla.org/pt-BR/" target="_blank" rel="noopener">MDN Web Docs</a></p>
+                <p>Licença <a href="https://creativecommons.org/licenses/by-sa/2.5/" target="_blank" rel="noopener">CC-BY-SA 2.5</a></p>
+            </div>
+            <div class="footer-right">
+                <p>&copy; <span id="current-year"></span> Dicionário Web Dev</p>
+                <p>Todos os direitos reservados</p>
+                <p>Agradecimento especiais ao pessoal do setor de TI (Help-Desk) pelas ideias de cores.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+       
+    </script>
+</body>
+</html>

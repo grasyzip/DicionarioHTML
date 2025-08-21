@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulação do DOM</title>
+    <link rel="stylesheet" href="../stylesheet.css">
+    <link rel="stylesheet" href="styleman.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+         <header>
+        <h1>Dicionário de JavaScript</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="/javascript/index.html">JavaScript</a></li>
+                <li><a href="../sintaxe/index.html">Sintaxe Básica</a></li>
+                <li><a href="../manipulacao/index.html" class="ativo">Manipulação DOM</a></li>
+                <li><a href="../eventos/index.html">Eventos</a></li>
+                <li><a href="../funcoes/index.html">Funções</a></li>
+                <li><a href="../objetos/index.html">Objetos & Arrays</a></li>
+                <li><a href="../async/index.html">Async/Await</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+    <h1>Manipulação do DOM com JavaScript</h1>
+    
+    <div id="conteudo">
+        <p>Este é um parágrafo dentro da div.</p>
+    </div>
+    
+    <button onclick="alterarConteudo()">Alterar Conteúdo</button>
+    <button onclick="adicionarElemento()">Adicionar Elemento</button>
+    <button onclick="removerElemento()">Remover Elemento</button>
+    <button onclick="alterarEstilo()">Alterar Estilo</button>
+    
+    <h2>Exemplos de Manipulação</h2>
+    <pre><code>// Selecionar elementos
+        const div = document.getElementById('conteudo');
+        const paragrafo = document.querySelector('#conteudo p');
+
+        // Alterar conteúdo
+        div.innerHTML = '&lt;p&gt;Novo conteúdo&lt;/p&gt;';
+
+        // Adicionar elemento
+        const novoElemento = document.createElement('span');
+        novoElemento.textContent = 'Texto do span';
+        div.appendChild(novoElemento);
+
+        // Alterar estilo
+        div.style.backgroundColor = 'lightblue';</code></pre>
+
+        
+
+        
+        <!-- Card 5: Promises -->
+        <div class="card">
+            <div class="card-header">Promises e Async/Await</div>
+            <div class="card-body">
+                <p>Trabalhando com operações assíncronas.</p>
+                <div class="card-code">
+// Criando uma Promise<br>
+const fetchData = () => {<br>
+  return new Promise((resolve, reject) => {<br>
+    setTimeout(() => {<br>
+      resolve("Dados recebidos!");<br>
+    }, 2000);<br>
+  });<br>
+};<br><br>
+
+// Usando Async/Await<br>
+async function getData() {<br>
+  try {<br>
+    const result = await fetchData();<br>
+    console.log(result);<br>
+  } catch (error) {<br>
+    console.error(error);<br>
+  }<br>
+}
+                </div>
+                <div class="card-example">
+                    <button class="card-button" onclick="exemploPromises()">Executar Exemplo</button>
+                    <div id="promises-output"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card 6: DOM Manipulation -->
+        <div class="card">
+            <div class="card-header">Manipulação do DOM</div>
+            <div class="card-body">
+                <p>Selecionando e modificando elementos do DOM.</p>
+                <div class="card-code">
+// Selecionando elementos<br>
+const elemento = document.getElementById("meuId");<br>
+const elementos = document.querySelectorAll(".minhaClasse");<br><br>
+
+// Modificando conteúdo<br>
+elemento.textContent = "Novo texto";<br>
+elemento.innerHTML = "&lt;strong&gt;Texto em negrito&lt;/strong&gt;";<br><br>
+
+// Adicionando evento<br>
+elemento.addEventListener("click", function() {<br>
+  this.style.backgroundColor = "blue";<br>
+});
+                </div>
+                <div class="card-example">
+                    <button class="card-button" onclick="exemploDOM()">Executar Exemplo</button>
+                    <div id="dom-output"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card 7: ES6 Features -->
+        <div class="card">
+            <div class="card-header">Recursos do ES6+</div>
+            <div class="card-body">
+                <p>Novos recursos introduzidos no ECMAScript 2015 e além.</p>
+                <div class="card-code">
+// Template literals<br>
+const nome = "Carlos";<br>
+const mensagem = `Olá, ${nome}!`;<br><br>
+
+// Destructuring assignment<br>
+const [a, b] = [1, 2];<br>
+const {x, y} = {x: 10, y: 20};<br><br>
+
+// Spread operator<br>
+const arr1 = [1, 2, 3];<br>
+const arr2 = [...arr1, 4, 5]; // [1, 2, 3, 4, 5]<br><br>
+
+// Parâmetros padrão<br>
+function saudar(nome = "Visitante") {<br>
+  return `Olá, ${nome}!`;<br>
+}
+                </div>
+                <div class="card-example">
+                    <button class="card-button" onclick="exemploES6()">Executar Exemplo</button>
+                    <div id="es6-output"></div>
+                </div>
+            </div>
+        </div>
+</main>
+</body>
+</html>

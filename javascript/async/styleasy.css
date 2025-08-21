@@ -1,0 +1,41 @@
+:root {
+ --cor-primaria: #2965f1; /* Tom de azul */
+    --cor-secundaria: #6a9bff; /* Azul mais claro */
+    --cor-destaque: #adb5bd;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: #607D8B;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+}
+button:hover {
+    background-color: #455A64;
+}
+#resultado {
+    background-color: #f4f4f4;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+.carregando {
+    color: #2196F3;
+    font-weight: bold;
+}
+.erro {
+    color: #F44336;
+    font-weight: bold;
+}
+#posts-container {
+    margin-top: 20px;
+}
+.post {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}

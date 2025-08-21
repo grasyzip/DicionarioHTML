@@ -65,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Atualiza as cores dinamicamente na página
         document.documentElement.style.setProperty('--cor-primaria', hsl);
+        // arrumar o bug de colorir a página toda se quiser haha
 
         // Atualiza o gradiente do slider de luminosidade
         lightnessSlider.style.background = `linear-gradient(to right, 
@@ -96,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
             else isDraggingLightness = false;
         };
 
+        // deve ta aqui
         const updateSlider = (e, isHue) => {
             const rect = slider.getBoundingClientRect();
             let pos = (e.clientX - rect.left) / rect.width;
@@ -107,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (isHue) {
                 currentHue = value;
             } else {
-                currentLightness = 100 - value; // Invertemos para ir do escuro ao claro
+                currentLightness = 100 - value; // invertemos para ir do escuro ao claro !!!!!!!!!!!
             }
 
             updateColor();

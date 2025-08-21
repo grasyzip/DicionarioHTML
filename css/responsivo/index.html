@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Design Responsivo | Dicionário CSS</title>
     <link rel="stylesheet" href="../stylesheet.css">
-        <link rel="stylesheet" href="../../stylesearch.css">
     <link rel="stylesheet" href="styleres.css">
-    <script src="../script.js" defer></script>
     <script src="script.js"></script>
+       <!-- barra de pesuqisa -->
+    <link rel="stylesheet" href="../../stylesearch.css">
+    <script src="/search.js"></script> 
 </head>
 <body>
     <header>
@@ -32,19 +33,19 @@
             <h2>Design Responsivo</h2>
             <p>Técnicas para criar layouts que se adaptam a diferentes tamanhos de tela.</p>
         </section>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-box" 
+                   placeholder="Pesquisar seletores (ex: classe, ID)..."
+                   aria-label="Campo de pesquisa">
+        </div>
+        
+        <div class="no-results" id="noResults">
+            <p>Nenhum seletor encontrado com "<span id="searchTerm"></span>"</p>
+            <p>Tente outro termo ou verifique a ortografia.</p>
+        </div>
 
-        <section class="tag-list">
-
-            <div class="search-container">
-                <input type="text" id="searchInput" class="search-box" 
-                       placeholder="Pesquisar seletores (ex: classe, ID)..."
-                       aria-label="Campo de pesquisa">
-            </div>
-            
-            <div class="no-results" id="noResults">
-                <p>Nenhum seletor encontrado com "<span id="searchTerm"></span>"</p>
-                <p>Tente outro termo ou verifique a ortografia.</p>
-            </div>
+        <section class="tag-list ">
 
             <div class="tag-card categoria">
                 <div class="tag-name">Meta Viewport</div>

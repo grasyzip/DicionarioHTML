@@ -31,6 +31,13 @@ nav a.ativo {
     background-color: #eed4ff
 }
 
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 2rem 0
+}
+
 .categoria {
     background-color: #fff;
     border-radius: 8px;

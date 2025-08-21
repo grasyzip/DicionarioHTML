@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programação Assíncrona em JavaScript</title>
+    <link rel="stylesheet" href="../stylesheet.css">
+    <link rel="stylesheet" href="styleasy.css">
+    <script src="script.js" defer></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+
+         <header>
+        <h1>Dicionário de JavaScript</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="/javascript/index.html">JavaScript</a></li>
+                <li><a href="../sintaxe/index.html">Sintaxe Básica</a></li>
+                <li><a href="../manipulacao/index.html">Manipulação DOM</a></li>
+                <li><a href="../eventos/index.html">Eventos</a></li>
+                <li><a href="../funcoes/index.html">Funções</a></li>
+                <li><a href="../objetos/index.html">Objetos & Arrays</a></li>
+                <li><a href="../async/index.html" class="ativo">Async/Await</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+    <h1>Programação Assíncrona em JavaScript</h1>
+    
+    <div id="resultado">Resultados aparecerão aqui...</div>
+    
+    <button onclick="usarCallbacks()">Usar Callbacks</button>
+    <button onclick="usarPromises()">Usar Promises</button>
+    <button onclick="usarAsyncAwait()">Usar Async/Await</button>
+    <button onclick="buscarPosts()">Buscar Posts da API</button>
+    
+    <div id="posts-container"></div>
+    
+    <h2>Callbacks</h2>
+    <pre><code>function fazerAlgoAsync(callback) {
+    setTimeout(() => {
+        callback('Dados processados');
+    }, 1000);
+}
+
+fazerAlgoAsync((resultado) => {
+    console.log(resultado); // "Dados processados" após 1 segundo
+});</code></pre>
+    
+    <h2>Promises</h2>
+    <pre><code>function carregarDados() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const sucesso = Math.random() > 0.3;
+            if (sucesso) {
+                resolve('Dados carregados com sucesso');
+            } else {
+                reject('Erro ao carregar dados');
+            }
+        }, 1500);
+    });
+}
+
+carregarDados()
+    .then(resultado => console.log(resultado))
+    .catch(erro => console.error(erro));</code></pre>
+    
+    <h2>Async/Await</h2>
+    <pre><code>async function processarDados() {
+    try {
+        const resultado = await carregarDados();
+        console.log(resultado);
+    } catch (erro) {
+        console.error(erro);
+    }
+}
+
+processarDados();</code></pre>
+</main>
+</body>
+</html>

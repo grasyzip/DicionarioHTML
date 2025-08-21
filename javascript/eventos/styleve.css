@@ -1,0 +1,33 @@
+:root {
+ --cor-primaria: #2965f1; /* Tom de azul */
+    --cor-secundaria: #6a9bff; /* Azul mais claro */
+    --cor-destaque: #adb5bd;
+}
+
+        #area-interacao {
+            width: 300px;
+            height: 150px;
+            border: 2px dashed #333;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f9f9f9;
+        }
+        button {
+            padding: 8px 15px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #0b7dda;
+        }
+        input {
+            padding: 8px;
+            margin: 10px 0;
+            width: 200px;
+        }

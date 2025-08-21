@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções em JavaScript</title>
+    <link rel="stylesheet" href="../stylesheet.css">
+    <link rel="stylesheet" href="stylefun.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+         <header>
+        <h1>Dicionário de JavaScript</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="/javascript/index.html">JavaScript</a></li>
+                <li><a href="../sintaxe/index.html">Sintaxe Básica</a></li>
+                <li><a href="../manipulacao/index.html">Manipulação DOM</a></li>
+                <li><a href="../eventos/index.html">Eventos</a></li>
+                <li><a href="../funcoes/index.html" class="ativo">Funções</a></li>
+                <li><a href="../objetos/index.html">Objetos & Arrays</a></li>
+                <li><a href="../async/index.html">Async/Await</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+    <h1>Funções em JavaScript</h1>
+    
+    <div id="resultado"></div>
+    
+    <button onclick="saudacao()">Saudação Simples</button>
+    <button onclick="calcular()">Calcular</button>
+    <button onclick="usarFuncaoAnonima()">Função Anônima</button>
+    <button onclick="usarArrowFunction()">Arrow Function</button>
+    
+    <h2>Tipos de Funções</h2>
+    <pre><code>// Declaração de função
+function soma(a, b) {
+    return a + b;
+}
+
+// Expressão de função (função anônima)
+const multiplicacao = function(a, b) {
+    return a * b;
+};
+
+// Arrow function (ES6+)
+const divisao = (a, b) => a / b;
+
+// Função imediatamente invocada (IIFE)
+(function() {
+    console.log('Executada imediatamente');
+})();</code></pre>
+    
+    <h2>Parâmetros e Retorno</h2>
+    <pre><code>// Parâmetros padrão (ES6+)
+function saudacao(nome = 'Visitante') {
+    return `Olá, ${nome}!`;
+}
+
+// Retornando múltiplos valores
+function calcular(a, b) {
+    return {
+        soma: a + b,
+        subtracao: a - b,
+        multiplicacao: a * b
+    };
+}</code></pre>
+
+       
+        <!-- Card 2: Funções -->
+        <div class="card">
+            <div class="card-header">Funções</div>
+            <div class="card-body">
+                <p>Diferentes formas de declarar funções em JavaScript.</p>
+                <div class="card-code">
+// Declaração de função<br>
+function soma(a, b) {<br>
+  return a + b;<br>
+}<br><br>
+
+// Expressão de função<br>
+const multiplicacao = function(a, b) {<br>
+  return a * b;<br>
+};<br><br>
+
+// Arrow function (ES6)<br>
+const divisao = (a, b) => a / b;
+                </div>
+                <div class="card-example">
+                    <button class="card-button" onclick="exemploFuncoes()">Executar Exemplo</button>
+                    <div id="funcoes-output"></div>
+                </div>
+            </div>
+        </div>
+        
+</main>
+</body>
+</html>

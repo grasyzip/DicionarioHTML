@@ -71,6 +71,24 @@ nav a.ativo {
     background-color: var(--cor-secundaria)
 }
 
+.tag-list {
+    flex-grow: 1
+}
+
+.tag-name {
+    border-bottom: 2px solid var(--cor-secundaria);
+    color: var(--cor-primaria);
+    padding-bottom: .5rem
+}
+
+.intro {
+    background-color: var(--cor-destaque);
+    border-left: 5px solid var(--cor-primaria);
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    padding: 1.5rem
+}
+
 .tag-example {
     background-color: #ffe6f0;
     border-left-color: var(--cor-secundaria)
@@ -145,23 +163,6 @@ nav a.ativo {
     width: 60px
 }
 
-.tag-list {
-    flex-grow: 1
-}
-
-.tag-name {
-    border-bottom: 2px solid var(--cor-secundaria);
-    color: var(--cor-primaria);
-    padding-bottom: .5rem
-}
-
-.intro {
-    background-color: var(--cor-destaque);
-    border-left: 5px solid var(--cor-primaria);
-    border-radius: 8px;
-    margin-bottom: 2rem;
-    padding: 1.5rem
-}
 
 .btn-exemplo {
     background-color: var(--cor-primaria);
@@ -229,4 +230,11 @@ nav a.ativo {
     display: block;
     font-weight: 700;
     margin-bottom: 5px
+}
+
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 2rem 0
 }

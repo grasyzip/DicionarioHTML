@@ -32,13 +32,20 @@ nav a.ativo {
     background-color: #e3f2ff;
 }
 
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 2rem 0
+}
+
 .categoria {
     background-color: #ffffff;
     border-radius: 8px;
     padding: 1.5rem;
     margin-bottom: 2rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    border-top: 3px solid #83e0f1;
+    border-top: 3px solid #83b1f1;
 }
 
 /* Estilos para o botão de exemplo */
