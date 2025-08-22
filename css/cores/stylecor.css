@@ -1,7 +1,7 @@
 :root {
-    --cor-destaque: #fce4ec;
     --cor-primaria: #ff40c6;
-    --cor-secundaria: #ff80ce
+    --cor-secundaria: #ff80ce;
+    --cor-destaque: #fce4ec;
 }
 
 .color-picker-container {

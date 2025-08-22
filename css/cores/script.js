@@ -69,9 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Atualiza o gradiente do slider de luminosidade
         lightnessSlider.style.background = `linear-gradient(to right, 
-            hsl(${currentHue}, ${currentSaturation}%, 0%), 
+            hsl(${currentHue}, ${currentSaturation}%, 100%), 
             hsl(${currentHue}, ${currentSaturation}%, 50%), 
-            hsl(${currentHue}, ${currentSaturation}%, 100%))`;
+            hsl(${currentHue}, ${currentSaturation}%, 0%))`;
     }
 
     // Configura os sliders
