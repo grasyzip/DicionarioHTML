@@ -3,51 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dicionário de Desenvolvimento Web</title>
+    <title>Dicionário CSS - Página Inicial</title>
     <link rel="stylesheet" href="stylesheet.css">
     <script src="script.js" defer></script>
+    <script src="../ano.js"></script>
 </head>
-<body background="../imgs/blurfachada.png" style="margin: 0; background-size: cover; background-repeat: no-repeat;">
-    <main>
-        <section class="hero">
-            <h2>Dicionário de Desenvolvimento Web</h2>
-            <p>Um guia (in)completo com todas as tags HTML, propriedades CSS e conceitos JavaScript.</p>
-        </section>
-        
-        <section class="materias">
-            
-            <div class="materias-grid">
-                <div class="materia-card html-card">
-                    <div class="card-icon">
-                        <img src="imgs/html.jpg" alt="Ícone HTML">
-                    </div>
-                    <h3><a href="html/index.html">HTML</a></h3>
-                    <p>A linguagem de marcação para estruturar conteúdo web.</p>
-                 </div>
-                
-                <div class="materia-card css-card">
-                    <div class="card-icon">
-                        <img src="imgs/css.jpg" alt="Ícone CSS">
-                    </div>
-                    <h3><a href="css/index.html">CSS</a></h3>
-                    <p>A linguagem de estilo para design e layout web.</p>
-                </div>
-                
-                <div class="materia-card js-card">
-                    <div class="card-icon">
-                        <img src="imgs/javascript.jpg" alt="Ícone JavaScript">
-                    </div>
-                    <h3><a href="javascript/index.html">JavaScript</a></h3>
-                    <p>A linguagem de programação para interatividade web.</p>
-                </div>
+<body>
+    <header>
+        <h1>Dicionário de Propriedades CSS</h1>
+        <p>Explore todas as propriedades CSS organizadas por categorias, com exemplos práticos e explicações detalhadas.</p>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="index.html"  class="ativo">CSS</a></li>
+                <li><a href="seletores/index.html">Seletores</a></li>
+                <li><a href="layout/index.html">Layout</a></li>
+                <li><a href="cores/index.html">Cores & Tipografia</a></li>
+                <li><a href="efeitos/index.html">Efeitos & Animações</a></li>
+                <li><a href="responsivo/index.html">Design Responsivo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>  
+        <section class="categorias">
+            <div class="categoria-card">
+                <h3><a href="seletores/index.html">Seletores CSS</a></h3>
+                <p>Formas de selecionar elementos para estilização.</p>
+                <ul>
+                    <li>Seletores de tipo (element)</li>
+                    <li>Seletores de classe (.class)</li>
+                    <li>Seletores de ID (#id)</li>
+                    <li>Seletores de atributo ([attr])</li>
+                    <li>Pseudo-classes (:hover)</li>
+                </ul>
             </div>
+
+            <div class="categoria-card">
+                <h3><a href="layout/index.html">Propriedades de Layout</a></h3>
+                <p>Controle a disposição dos elementos na página.</p>
+                <ul>
+                    <li>display (block, flex, grid)</li>
+                    <li>position (relative, absolute)</li>
+                    <li>flexbox (flex-direction, justify-content)</li>
+                    <li>grid (grid-template, gap)</li>
+                    <li>margin e padding</li>
+                </ul>
+            </div>
+
+            <div class="categoria-card">
+                <h3><a href="cores/index.html">Cores & Tipografia</a></h3>
+                <p>Estilização de texto e cores.</p>
+                <ul>
+                    <li>color e background-color</li>
+                    <li>font-family e font-size</li>
+                    <li>line-height e letter-spacing</li>
+                    <li>text-align e text-decoration</li>
+                    <li>gradients e rgba/hsla</li>
+                </ul>
+            </div>
+
+            <div class="categoria-card">
+                <h3><a href="efeitos/index.html">Efeitos & Animações</a></h3>
+                <p>Propriedades para criar interações e movimentos.</p>
+                <ul>
+                    <li>transition (property, duration)</li>
+                    <li>animation e @keyframes</li>
+                    <li>transform (rotate, scale)</li>
+                    <li>box-shadow e text-shadow</li>
+                    <li>filter (blur, contrast)</li>
+                </ul>
+            </div>
+
+            <div class="categoria-card">
+                <h3><a href="responsivo/index.html">Design Responsivo</a></h3>
+                <p>Técnicas para layouts adaptáveis.</p>
+                <ul>
+                    <li>@media queries</li>
+                    <li>viewport meta tag</li>
+                    <li>unidades relativas (rem, vw)</li>
+                    <li>flexbox e grid responsivos</li>
+                    <li>mobile-first design</li>
+                </ul>
+            </div>
+        </section>
+
+        
+        <section class="destaques">
+            <h3>Sobre CSS</h3>
+            <ul>
+                <li>CSS significa Cass</li>
+                <li>Composta por regras: tem pelo menos um seletor; possuem propriedade/valores</li>
+                <li>Técnicas modernas de estilização</li>
+                <li>Boas práticas e performance</li>
+                <li>Organização por categorias funcionais</li>
+            </ul>
+        </section>
+
+        <section class="destaques">
+            <h3>Recursos adicionais</h3>
+            <ul>
+                <li>Site para purificar o CSS do HTML (tira CSS que não está sendo utilizados): <a clas="link" href="https://purifycss.online/" >https://purifycss.online/</a></li>
+                <li>Site para composição de cores: <a class="link" href="https://color.adobe.com/pt/create/color-wheel">https://color.adobe.com/pt/create/color-wheel</a>
+                </li>
+            </ul>
         </section>
     </main>
 
     <footer>
         <div class="footer-content">
             <div class="footer-left">
-                <img src="imgs/logo-cavalo-branco.png" alt="Unisanta Cavalo Branco" class="footer-logo">
+                <img src="../../imgs/logo-cavalo-branco.png" alt="Unisanta Cavalo Branco" class="footer-logo">
             </div>
             <div class="footer-center">
                 <p>Conteúdo baseado na documentação da <a href="https://developer.mozilla.org/pt-BR/" target="_blank" rel="noopener">MDN Web Docs</a></p>
@@ -56,10 +122,9 @@
             <div class="footer-right">
                 <p>&copy; <span id="current-year"></span> Dicionário Web Dev</p>
                 <p>Todos os direitos reservados</p>
-                <p>Agradecimento especiais ao pessoal do setor de <br>TI (Help-Desk) da Unisanta pelas ideias de cores.</p>
+                <p>Agradecimento especiais ao pessoal do setor de<br> TI (Help-Desk) da Unisanta pelas ideias de cores.</p>
             </div>
         </div>
     </footer>
 </body>
-
 </html>
