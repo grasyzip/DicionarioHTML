@@ -64,7 +64,7 @@
             styletxt.css
             + css
 
-    /javascript  //fazer ainda
+    /javascript  //fazer ainda AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         index.html      //trocar de cor
         stylesheet.css
         script.js       //amarelo e preto

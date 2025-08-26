@@ -91,9 +91,7 @@ nav a.ativo {
 }
 
 .exemplo-interativo h1,
-h2,
-h3,
-h6 {
+h2, h3, h6 {
     margin: .5rem 0
 }
 

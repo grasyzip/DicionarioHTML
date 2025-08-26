@@ -1,8 +1,112 @@
 :root {
  --cor-primaria: #2965f1; /* Tom de azul */
     --cor-secundaria: #6a9bff; /* Azul mais claro */
-    --cor-destaque: #adb5bd;
+    --cor-texto: #2c3e50;
+    --cor-fundo: #ecf0f1;
+    --cor-borda: #bdc3c7;
+    --cor-sucesso: #2ecc71;
+    --cor-erro: #e74c3c;
+    --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0.5rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+nav ul li a.ativo {
+    background-color: var(--cor-destaque);
+    font-weight: bold;
+}
+
+/* Conteúdo principal */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.btn-executar {
+    padding: 0.5rem 1rem;
+    background-color: var(--cor-sucesso);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s;
+}
+
+.btn-executar:hover {
+    background-color: #27ae60;
+}
+
+.resultado {
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    border-left: 4px solid var(--cor-destaque);
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre-wrap;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .tag-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-right {
+        text-align: center;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+
 
 code {
     background-color: #f4f4f4;

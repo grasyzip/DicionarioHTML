@@ -178,3 +178,123 @@
             botao1.addEventListener('click', handleClick);
             botao2.addEventListener('click', handleClick);
         }
+// Configuração da funcionalidade de pesquisa
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('searchInput');
+    const noResults = document.getElementById('noResults');
+    const searchTerm = document.getElementById('searchTerm');
+    const tagCards = document.querySelectorAll('.tag-card');
+    
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            const searchText = this.value.toLowerCase().trim();
+            let resultsFound = false;
+            
+            if (searchText === '') {
+                // Se a pesquisa estiver vazia, mostra todos os cards
+                tagCards.forEach(card => {
+                    card.style.display = 'block';
+                    // Remove qualquer destaque anterior
+                    const highlights = card.querySelectorAll('.highlight');
+                    highlights.forEach(highlight => {
+                        const parent = highlight.parentNode;
+                        parent.replaceChild(document.createTextNode(highlight.textContent), highlight);
+                        parent.normalize();
+                    });
+                });
+                noResults.style.display = 'none';
+                return;
+            }
+            
+            // Pesquisa nos cards
+            tagCards.forEach(card => {
+                const cardText = card.textContent.toLowerCase();
+                if (cardText.includes(searchText)) {
+                    card.style.display = 'block';
+                    resultsFound = true;
+                    
+                    // Destacar o texto pesquisado
+                    highlightText(card, searchText);
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Mostra ou esconde a mensagem de nenhum resultado
+            if (!resultsFound) {
+                searchTerm.textContent = searchText;
+                noResults.style.display = 'block';
+            } else {
+                noResults.style.display = 'none';
+            }
+        });
+    }
+    
+    // Função para destacar texto pesquisado
+    function highlightText(element, searchText) {
+        // Remove destaque anterior
+        const highlighted = element.querySelectorAll('.highlight');
+        highlighted.forEach(el => {
+            const parent = el.parentNode;
+            parent.replaceChild(document.createTextNode(el.textContent), el);
+            parent.normalize();
+        });
+        
+        // Aplica novo destaque apenas se houver texto para pesquisar
+        if (searchText.length < 2) return;
+        
+        // Função recursiva para percorrer todos os nós de texto
+        function highlightNode(node) {
+            if (node.nodeType === 3) { // Nó de texto
+                const text = node.nodeValue;
+                const searchRegex = new RegExp(searchText, 'gi');
+                let match;
+                let lastIndex = 0;
+                const fragment = document.createDocumentFragment();
+                
+                while ((match = searchRegex.exec(text)) !== null) {
+                    // Texto antes da correspondência
+                    if (match.index > lastIndex) {
+                        fragment.appendChild(document.createTextNode(text.substring(lastIndex, match.index)));
+                    }
+                    
+                    // Texto correspondente (destacado)
+                    const highlight = document.createElement('span');
+                    highlight.className = 'highlight';
+                    highlight.style.backgroundColor = 'yellow';
+                    highlight.style.color = 'black';
+                    highlight.appendChild(document.createTextNode(match[0]));
+                    fragment.appendChild(highlight);
+                    
+                    lastIndex = match.index + match[0].length;
+                }
+                
+                // Texto após a última correspondência
+                if (lastIndex < text.length) {
+                    fragment.appendChild(document.createTextNode(text.substring(lastIndex)));
+                }
+                
+                return fragment;
+            } else if (node.nodeType === 1 && node.childNodes && !/(script|style)/i.test(node.tagName)) {
+                // É um elemento, processar seus filhos
+                const children = Array.from(node.childNodes);
+                for (let i = 0; i < children.length; i++) {
+                    const highlighted = highlightNode(children[i]);
+                    if (highlighted) {
+                        node.replaceChild(highlighted, children[i]);
+                    }
+                }
+            }
+            return null;
+        }
+        
+        highlightNode(element);
+    }
+});
+        // Atualiza o ano no footer
+document.addEventListener('DOMContentLoaded', function() {
+    const currentYearElement = document.getElementById('current-year');
+    if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear();
+    }
+});
