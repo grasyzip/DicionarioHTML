@@ -1,24 +1,28 @@
 :root {
- --cor-primaria: #2965f1; /* Tom de azul */
-    --cor-secundaria: #6a9bff; /* Azul mais claro */
+    --cor-primaria: #2965f1; 
+    --cor-secundaria: #6a9bff; 
     --cor-destaque: #adb5bd;
 }
-        #saida {
-            background-color: #f4f4f4;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 5px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 10px 0;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
+
+#saida {
+    background-color: #f4f4f4;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
