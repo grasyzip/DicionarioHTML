@@ -20,9 +20,6 @@ function updateFooterYear() {
     }
 }
 
-
-
-
 // Funções de pesquisa (compartilhado entre páginas)
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('searchInput');
