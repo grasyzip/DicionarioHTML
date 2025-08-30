@@ -1,6 +1,6 @@
 :root {
- --cor-primaria: #2965f1; /* Tom de azul */
-    --cor-secundaria: #6a9bff; /* Azul mais claro */
+ --cor-primaria: #2965f1; 
+    --cor-secundaria: #6a9bff; 
     --cor-destaque: #adb5bd;
 }
 #conteudo {
@@ -20,4 +20,5 @@ button {
 }
 button:hover {
     background-color: #45a049;
+
 }
