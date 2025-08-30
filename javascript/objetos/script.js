@@ -108,5 +108,4 @@ function criarClasse() {
             </tr>
         </table>
     `;
-
 }
