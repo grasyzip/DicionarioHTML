@@ -149,9 +149,15 @@ function makeResizable(element) {
         if (heightDisplay) {
             heightDisplay.textContent = Math.round(resizable.offsetHeight);
         }
-        if (fontSizeDisplay && textElement) {
-            const fontSize = window.getComputedStyle(textElement).fontSize;
-            fontSizeDisplay.textContent = fontSize;
+        // Dynamically set font size based on container width
+        if (textElement) {
+            // Set font size to 5% of container width, minimum 12px, maximum 48px
+            const containerWidth = resizable.offsetWidth;
+            const fontSizePx = Math.max(12, Math.min(48, containerWidth * 0.05));
+            textElement.style.fontSize = fontSizePx + 'px';
+            if (fontSizeDisplay) {
+                fontSizeDisplay.textContent = Math.round(fontSizePx) + 'px';
+            }
         }
         if (squareWidthDisplay && squareElement) {
             squareWidthDisplay.textContent = Math.round(squareElement.offsetWidth);
