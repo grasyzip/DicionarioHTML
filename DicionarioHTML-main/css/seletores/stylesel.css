@@ -1,0 +1,89 @@
+:root {
+    --cor-primaria: #2965f1;
+    --cor-secundaria: #6a9bff;
+    --cor-destaque: #adb5bd
+}
+
+.tag-name {
+    color: var(--cor-primaria);
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: .5rem
+}
+
+.tag-card:hover {
+    box-shadow: 0 5px 15px rgba(41, 101, 241, .2)
+}
+
+nav a.ativo {
+    background-color: var(--cor-secundaria)
+}
+
+.intro {
+    background-color: #f0f7ff;
+    border-left: 5px solid var(--cor-primaria);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem
+}
+
+.tag-example {
+    border-left-color: var(--cor-secundaria);
+    background-color: #e3f2ff
+}
+
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 2rem 0
+}
+
+.categoria {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+    border-top: 3px solid #83b1f1
+}
+
+.btn-exemplo {
+    background-color: var(--cor-primaria);
+    color: #fff;
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: .9rem;
+    margin-top: 1rem;
+    transition: background-color .2s
+}
+
+.btn-exemplo:hover {
+    background-color: #1a49c0
+}
+
+.exemplo-interativo {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    border-left: 3px solid var(--cor-secundaria)
+}
+
+.exemplo-interativo h4 {
+    color: var(--cor-primaria);
+    margin-top: 0
+}
+
+#exemplo-hover button:hover {
+    background-color: var(--cor-secundaria)
+}
+
+#exemplo-nth-child li:nth-child(odd) {
+    background: #e3f2ff
+}
+
+#exemplo-nth-child li {
+    padding: 5px
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cores & Tipografia | Dicionário CSS</title>
+    <link rel="stylesheet" href="../stylesheet.css">
+    <link rel="stylesheet" href="stylecor.css">
+    <script src="script.js"></script>
+        <!-- barra de pesuqisa -->
+    <link rel="stylesheet" href="../../stylesearch.css">
+    <script src="../../search.js"></script>
+    <script src="../../ano.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Cores & Tipografia</h1>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../index.html">CSS</a></li>
+                <li><a href="../seletores/index.html">Seletores</a></li>
+                <li><a href="../layout/index.html">Layout</a></li>
+                <li><a href="index.html" class="ativo">Cores & Tipografia</a></li>
+                <li><a href="../efeitos/index.html">Efeitos & Animações</a></li>
+                <li><a href="../responsivo/index.html">Design Responsivo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="conteudo">
+        <section class="intro">
+            <h2>Cores e Tipografia CSS</h2>
+            <p>Propriedades para estilizar a cor e o texto de elementos HTML.</p>
+        </section>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-box" 
+                   placeholder="Pesquisar propriedades (ex: color, font-size)..."
+                   aria-label="Campo de pesquisa">
+        </div>
+        
+        <div class="no-results" id="noResults">
+            <p>Nenhuma propriedade encontrada com "<span id="searchTerm"></span>"</p>
+            <p>Tente outro termo ou verifique a ortografia.</p>
+        </div>
+
+        <div class="main-container">
+
+            
+            <div class="color-display-container color-picker-container selected-color-info slider-container">
+                <div class="">
+                    <h3>Selecione uma Cor:</h3>
+
+                    <label class="slider-label">Matiz (Hue):</label>
+                    <div class="hue-slider" id="hueSlider">
+                        <div class="hue-handle" id="hueHandle"></div>
+                    </div>
+                    
+                    <label class="slider-label">Luminosidade:</label>
+                    <div class="lightness-slider" id="lightnessSlider">
+                        <div class="lightness-handle" id="lightnessHandle"></div>
+                    </div>
+
+                    <div id="color-display"></div>
+                    <div class="color-codes">
+                        <div id="hex-code">#ff0000</div>
+                        <div id="rgb-code">rgb(255, 0, 0)</div>
+                        <div id="hsl-code">hsl(0, 100%, 50%)</div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <section class="tag-list categorias">
+                <div class="tag-card categoria">
+                    <div class="tag-name"><code>color</code></div>
+                    <div class="tag-desc">Define a cor do texto do elemento.</div>
+                    <div class="tag-example"><code>p { color: red; }</code></div>
+                <button class="btn-exemplo" data-target="exemplo-color">Ver Exemplo</button>
+                <div id="exemplo-color" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de `color`</h4>
+                    <p style="color: var(--cor-primaria);">Este parágrafo usa a propriedade `color` para mudar a cor do texto.</p>
+                </div>
+            </div>
+
+            <div class="tag-card categoria">
+                <div class="tag-name"><code>background-color</code></div>
+                <div class="tag-desc">Define a cor de fundo de um elemento.</div>
+                <div class="tag-example"><code>div { background-color: #f0f0f0; }</code></div>
+                <button class="btn-exemplo" data-target="exemplo-background">Ver Exemplo</button>
+                <div id="exemplo-background" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de `background-color`</h4>
+                    <div style="background-color: var(--cor-destaque); padding: 10px;">Este div tem uma cor de fundo.</div>
+                </div>
+            </div>
+
+            <div class="tag-card categoria">
+                <div class="tag-name"><code>font-family</code></div>
+                <div class="tag-desc">Define a fonte ou família de fontes para o texto.</div>
+                <div class="tag-example"><code>body { font-family: 'Arial', sans-serif; }</code></div>
+                <button class="btn-exemplo" data-target="exemplo-font-family">Ver Exemplo</button>
+                <div id="exemplo-font-family" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de `font-family`</h4>
+                    <p style="font-family: 'Times New Roman', serif;">Esta é uma fonte com serifa.</p>
+                    <p style="font-family: 'Arial', sans-serif;">Esta é uma fonte sem serifa.</p>
+                </div>
+            </div>
+
+            <div class="tag-card categoria">
+                <div class="tag-name"><code>font-size</code></div>
+                <div class="tag-desc">Define o tamanho da fonte.</div>
+                <div class="tag-example"><code>h1 { font-size: 2em; }</code></div>
+                <button class="btn-exemplo" data-target="exemplo-font-size">Ver Exemplo</button>
+                <div id="exemplo-font-size" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de `font-size`</h4>
+                    <p style="font-size: 1rem;">Texto com tamanho padrão (1rem).</p>
+                    <p style="font-size: 1.5rem;">Texto 50% maior (1.5rem).</p>
+                </div>
+            </div>
+
+            <div class="tag-card categoria">
+                <div class="tag-name"><code>font-weight</code></div>
+                <div class="tag-desc">Define a espessura da fonte (negrito).</div>
+                <div class="tag-example"><code>strong { font-weight: bold; }</code></div>
+                <button class="btn-exemplo" data-target="exemplo-font-weight">Ver Exemplo</button>
+                <div id="exemplo-font-weight" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de `font-weight`</h4>
+                    <p style="font-weight: 400;">Este texto é normal.</p>
+                    <p style="font-weight: bold;">Este texto é negrito.</p>
+                </div>
+            </div>
+
+            <div class="tag-card categoria">
+                <div class="tag-name"><code>text-align</code></div>
+                <div class="tag-desc">Define o alinhamento horizontal do texto.</div>
+                <div class="tag-example"><code>p { text-align: center; }</code></div>
+                <button class="btn-exemplo" data-target="exemplo-text-align">Ver Exemplo</button>
+                <div id="exemplo-text-align" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de `text-align`</h4>
+                    <p style="text-align: left;">Texto alinhado à esquerda.</p>
+                    <p style="text-align: center;">Texto alinhado ao centro.</p>
+                    <p style="text-align: right;">Texto alinhado à direita.</p>
+                </div>
+            </div>
+        </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="../../imgs/logo-cavalo-branco.png" alt="Unisanta Cavalo Branco" class="footer-logo">
+            </div>
+            <div class="footer-center">
+                <p>Conteúdo baseado na documentação da <a href="https://developer.mozilla.org/pt-BR/" target="_blank" rel="noopener">MDN Web Docs</a></p>
+                <p>Licença <a href="https://creativecommons.org/licenses/by-sa/2.5/" target="_blank" rel="noopener">CC-BY-SA 2.5</a></p>
+            </div>
+            <div class="footer-right">
+                <p>&copy; <span id="current-year"></span> Dicionário Web Dev</p>
+                <p>Todos os direitos reservados</p>
+                <p>Agradecimento especiais ao pessoal do setor de <br>TI (Help-Desk) da Unisanta pelas ideias de cores.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

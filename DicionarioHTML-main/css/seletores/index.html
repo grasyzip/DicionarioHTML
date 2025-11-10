@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seletores CSS | Dicionário CSS</title>
+    <link rel="stylesheet" href="../stylesheet.css">
+    <link rel="stylesheet" href="stylesel.css">
+    <script src="script.js"></script>
+    <!-- barra de pesuqisa -->
+    <link rel="stylesheet" href="../../stylesearch.css">
+    <script src="../../search.js"></script>
+    <script src="../../ano.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Seletores CSS</h1>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../index.html">CSS</a></li>
+                <li><a href="index.html" class="ativo">Seletores</a></li>
+                <li><a href="../layout/index.html">Layout</a></li>
+                <li><a href="../cores/index.html">Cores & Tipografia</a></li>
+                <li><a href="../efeitos/index.html">Efeitos & Animações</a></li>
+                <li><a href="../responsivo/index.html">Design Responsivo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="conteudo">
+        <section class="intro">
+            <h2>Seletores CSS</h2>
+            <p>Seletores são padrões que permitem selecionar elementos HTML para aplicar estilos.</p>
+        </section>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-box" 
+                   placeholder="Pesquisar seletores (ex: classe, ID)..."
+                   aria-label="Campo de pesquisa">
+        </div>
+        
+        <div class="no-results" id="noResults">
+            <p>Nenhum seletor encontrado com "<span id="searchTerm"></span>"</p>
+            <p>Tente outro termo ou verifique a ortografia.</p>
+        </div>
+        
+        <section class="tag-list categorias">
+            <div class="tag-card categoria">
+                <div class="tag-name">Seletor de Tipo (<code>p</code>)</div>
+                <div class="tag-desc">Seleciona todos os elementos de um tipo específico.</div>
+                <div class="tag-example"><code>p { color: blue; }</code></div>
+                <button class="btn-exemplo" data-target="exemplo-tipo">Ver Exemplo</button>
+                <div id="exemplo-tipo" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de Seletor de Tipo</h4>
+                    <p style="color: blue;">Este parágrafo foi estilizado com o seletor de tipo `p`.</p>
+                    <div>Este texto está dentro de uma `div` e não foi alterado.</div>
+                    <p style="color: blue;">Este é outro parágrafo que também foi afetado.</p>
+                </div>
+            </div>
+            
+            <div class="tag-card categoria">
+                <div class="tag-name">Seletor de Classe (<code>.classe</code>)</div>
+                <div class="tag-desc">Seleciona elementos com um atributo `class` específico.</div>
+                <div class="tag-example"><code>.destaque { background: yellow; }</code></div>
+                <button class="btn-exemplo" data-target="exemplo-classe">Ver Exemplo</button>
+                <div id="exemplo-classe" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de Seletor de Classe</h4>
+                    <p>Este parágrafo não tem a classe.</p>
+                    <p class="destaque" style="background: #ffffae;">Este parágrafo foi destacado com a classe `.destaque`.</p>
+                    <span class="destaque" style="background: #ffffae;">Este é um span com a mesma classe.</span>
+                </div>
+            </div>
+            
+            <div class="tag-card categoria">
+                <div class="tag-name">Seletor de ID (<code>#id</code>)</div>
+                <div class="tag-desc">Seleciona um único elemento com um atributo `id` específico.</div>
+                <div class="tag-example"><code>#header { height: 100px; }</code></div>
+                <button class="btn-exemplo" data-target="exemplo-id">Ver Exemplo</button>
+                <div id="exemplo-id" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de Seletor de ID</h4>
+                    <div id="header-exemplo" style="border: 1px solid black; height: 50px; background-color: #eee; line-height: 50px; text-align: center;">Este é o elemento com ID `header-exemplo`.</div>
+                </div>
+            </div>
+            
+            <div class="tag-card categoria">
+                <div class="tag-name">Seletor de Atributo (<code>[atributo="valor"]</code>)</div>
+                <div class="tag-desc">Seleciona elementos com um atributo e valor correspondentes.</div>
+                <div class="tag-example"><code>[type="text"] { border: 1px solid #ccc; }</code></div>
+                <button class="btn-exemplo" data-target="exemplo-atributo">Ver Exemplo</button>
+                <div id="exemplo-atributo" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de Seletor de Atributo</h4>
+                    <p>O campo de texto abaixo tem borda, mas o de e-mail não.</p>
+                    <input type="text" placeholder="Campo de texto" style="border: 1px solid #ccc; padding: 5px;">
+                    <input type="email" placeholder="Campo de email">
+                </div>
+            </div>
+            
+            <div class="tag-card categoria">
+                <div class="tag-name">Atributo com valor (<code>[target="_blank"]</code>)</div>
+                <div class="tag-desc">Seleciona elementos com o atributo e valor especificado, usado para abrir links em nova aba.</div>
+                <div class="tag-example"><code>a[target="_blank"]::after { content: " ↗"; }</code></div>
+                <button class="btn-exemplo" data-target="exemplo-target">Ver Exemplo</button>
+                <div id="exemplo-target" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de Seletor de Atributo com Valor</h4>
+                    <p>O link abaixo com o símbolo ↗ abrirá em uma nova aba.</p>
+                    <a href="#" target="_blank" style="text-decoration: none; color: blue;">Link para nova aba<span style="font-size: 0.8em;"> ↗</span></a><br>
+                    <a href="#" style="color: blue;">Link normal</a>
+                </div>
+            </div>
+            
+            <div class="tag-card categoria">
+                <div class="tag-name">Pseudo-classe (<code>:hover</code>)</div>
+                <div class="tag-desc">Seleciona um elemento quando o mouse passa sobre ele.</div>
+                <div class="tag-example"><code>a:hover { text-decoration: underline; }</code></div>
+                <button class="btn-exemplo" data-target="exemplo-hover">Ver Exemplo</button>
+                <div id="exemplo-hover" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de Pseudo-classe :hover</h4>
+                    <p>Passe o mouse sobre o botão para ver a cor mudar.</p>
+                    <button style="background-color: var(--cor-primaria); color: white; padding: 10px; border: none; cursor: pointer;">Passe o mouse aqui</button>
+                    <style>
+                        #exemplo-hover button:hover {
+                            background-color: var(--cor-secundaria);
+                        }
+                    </style>
+                </div>
+            </div>
+            
+            <div class="tag-card categoria">
+                <div class="tag-name">Pseudo-classe (<code>:nth-child()</code>)</div>
+                <div class="tag-desc">Seleciona elementos com base em sua posição dentro de um grupo.</div>
+                <div class="tag-example"><code>li:nth-child(odd) { background: #f5f5f5; }</code></div>
+                <button class="btn-exemplo" data-target="exemplo-nth-child">Ver Exemplo</button>
+                <div id="exemplo-nth-child" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de Pseudo-classe :nth-child()</h4>
+                    <p>Os itens ímpares da lista abaixo foram estilizados.</p>
+                    <ul style="list-style-type: none; padding: 0;">
+                        <li style="background: #f0f7ff; padding: 5px;">Item 1 (ímpar)</li>
+                        <li style="background: #fff; padding: 5px;">Item 2 (par)</li>
+                        <li style="background: #f0f7ff; padding: 5px;">Item 3 (ímpar)</li>
+                        <li style="background: #fff; padding: 5px;">Item 4 (par)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="../../imgs/logo-cavalo-branco.png" alt="Unisanta Cavalo Branco" class="footer-logo">
+            </div>
+            <div class="footer-center">
+                <p>Conteúdo baseado na documentação da <a href="https://developer.mozilla.org/pt-BR/" target="_blank" rel="noopener">MDN Web Docs</a></p>
+                <p>Licença <a href="https://creativecommons.org/licenses/by-sa/2.5/" target="_blank" rel="noopener">CC-BY-SA 2.5</a></p>
+            </div>
+            <div class="footer-right">
+                <p>&copy; <span id="current-year"></span> Dicionário Web Dev</p>
+                <p>Todos os direitos reservados</p>
+                <p>Agradecimento especiais ao pessoal do setor de <br>TI (Help-Desk) da Unisanta pelas ideias de cores.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

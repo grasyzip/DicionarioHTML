@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos de Arrays JavaScript | Dicionário JavaScript</title>
+    <link rel="stylesheet" href="../stylesheet.css">
+    <link rel="stylesheet" href="styleshet.css">
+    <script src="script.js" defer></script>
+        <!-- barra de pesuqisa -->
+    <link rel="stylesheet" href="../../stylesearch.css">
+    <script src="/search.js"></script>
+    <script src="/ano.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Métodos de Arrays JavaScript</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="/javascript/index.html">JavaScript</a></li>
+                <li><a href="../sintaxe/index.html">Sintaxe Básica</a></li>
+                <li><a href="arrays/index.html" class="ativo">Manipulação Arrays</a></li>
+                <li><a href="../manipulacao/index.html">Manipulação DOM</a></li>
+                <li><a href="../eventos/index.html">Eventos</a></li>
+                <li><a href="../funcoes/index.html">Funções</a></li>
+                <li><a href="../objetos/index.html">Objetos & Arrays</a></li>
+                <li><a href="../async/index.html">Async/Await</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="conteudo">
+            <section class="intro">
+                <h2>Métodos de Arrays JavaScript</h2>
+                <p>Conheça os principais métodos para manipulação de arrays em JavaScript.</p>
+            </section>
+            
+            <section class="tag-list categorias">
+                <!-- Card 1: push() -->
+                <div class="tag-card categoria">
+                    <div class="tag-name">push()</div>
+                    <div class="tag-desc">Adiciona um ou mais elementos ao final de um array e retorna o novo comprimento.</div>
+                    <div class="tag-example"><code>array.push(elemento1, elemento2, ...);</code></div>
+                    <button class="btn-exemplo" data-target="exemplo-push">Ver Exemplo</button>
+                    <div id="exemplo-push" class="exemplo-interativo" style="display:none;">
+                        <h4>Demonstração do método push()</h4>
+                        <pre><code>// Array inicial
+let frutas = ['maçã', 'banana'];
+
+// Adicionando um elemento
+frutas.push('laranja');
+console.log(frutas); // ['maçã', 'banana', 'laranja']
+
+// Adicionando múltiplos elementos
+let novoComprimento = frutas.push('uva', 'manga');
+console.log(frutas); // ['maçã', 'banana', 'laranja', 'uva', 'manga']
+console.log('Novo comprimento: ' + novoComprimento); // 5</code></pre>
+                        <button class="btn-executar" onclick="executarExemplo('exemplo-push')">Executar Código</button>
+                        <div class="resultado" id="resultado-push"></div>
+                    </div>
+                </div>
+                
+                <!-- Card 2: pop() -->
+                <div class="tag-card categoria">
+                    <div class="tag-name">pop()</div>
+                    <div class="tag-desc">Remove o último elemento de um array e retorna esse elemento.</div>
+                    <div class="tag-example"><code>let ultimoElemento = array.pop();</code></div>
+                    <button class="btn-exemplo" data-target="exemplo-pop">Ver Exemplo</button>
+                    <div id="exemplo-pop" class="exemplo-interativo" style="display:none;">
+                        <h4>Demonstração do método pop()</h4>
+                        <pre><code>// Array inicial
+let numeros = [10, 20, 30, 40, 50];
+
+// Removendo o último elemento
+let removido = numeros.pop();
+console.log('Elemento removido: ' + removido); // 50
+console.log('Array após pop: ' + numeros); // [10, 20, 30, 40]
+
+// Removendo mais um elemento
+removido = numeros.pop();
+console.log('Elemento removido: ' + removido); // 40
+console.log('Array após pop: ' + numeros); // [10, 20, 30]</code></pre>
+                        <button class="btn-executar" onclick="executarExemplo('exemplo-pop')">Executar Código</button>
+                        <div class="resultado" id="resultado-pop"></div>
+                    </div>
+                </div>
+                
+                <!-- Card 3: unshift() -->
+                <div class="tag-card categoria">
+                    <div class="tag-name">unshift()</div>
+                    <div class="tag-desc">Adiciona um ou mais elementos ao início de um array e retorna o novo comprimento.</div>
+                    <div class="tag-example"><code>array.unshift(elemento1, elemento2, ...);</code></div>
+                    <button class="btn-exemplo" data-target="exemplo-unshift">Ver Exemplo</button>
+                    <div id="exemplo-unshift" class="exemplo-interativo" style="display:none;">
+                        <h4>Demonstração do método unshift()</h4>
+                        <pre><code>// Array inicial
+let cores = ['verde', 'azul'];
+
+// Adicionando um elemento no início
+cores.unshift('vermelho');
+console.log(cores); // ['vermelho', 'verde', 'azul']
+
+// Adicionando múltiplos elementos no início
+let novoComprimento = cores.unshift('amarelo', 'roxo');
+console.log(cores); // ['amarelo', 'roxo', 'vermelho', 'verde', 'azul']
+console.log('Novo comprimento: ' + novoComprimento); // 5</code></pre>
+                        <button class="btn-executar" onclick="executarExemplo('exemplo-unshift')">Executar Código</button>
+                        <div class="resultado" id="resultado-unshift"></div>
+                    </div>
+                </div>
+                
+                <!-- Card 4: shift() -->
+                <div class="tag-card categoria">
+                    <div class="tag-name">shift()</div>
+                    <div class="tag-desc">Remove o primeiro elemento de um array e retorna esse elemento.</div>
+                    <div class="tag-example"><code>let primeiroElemento = array.shift();</code></div>
+                    <button class="btn-exemplo" data-target="exemplo-shift">Ver Exemplo</button>
+                    <div id="exemplo-shift" class="exemplo-interativo" style="display:none;">
+                        <h4>Demonstração do método shift()</h4>
+                        <pre><code>// Array inicial
+let animais = ['cachorro', 'gato', 'pássaro', 'peixe'];
+
+// Removendo o primeiro elemento
+let removido = animais.shift();
+console.log('Elemento removido: ' + removido); // 'cachorro'
+console.log('Array após shift: ' + animais); // ['gato', 'pássaro', 'peixe']
+
+// Removendo mais um elemento
+removido = animais.shift();
+console.log('Elemento removido: ' + removido); // 'gato'
+console.log('Array após shift: ' + animais); // ['pássaro', 'peixe']</code></pre>
+                        <button class="btn-executar" onclick="executarExemplo('exemplo-shift')">Executar Código</button>
+                        <div class="resultado" id="resultado-shift"></div>
+                    </div>
+                </div>
+                
+                <!-- Card 5: splice() -->
+                <div class="tag-card categoria">
+                    <div class="tag-name">splice()</div>
+                    <div class="tag-desc">Adiciona, remove ou substitui elementos em qualquer posição do array.</div>
+                    <div class="tag-example"><code>array.splice(início, quantidade, elemento1, elemento2, ...);</code></div>
+                    <button class="btn-exemplo" data-target="exemplo-splice">Ver Exemplo</button>
+                    <div id="exemplo-splice" class="exemplo-interativo" style="display:none;">
+                        <h4>Demonstração do método splice()</h4>
+                        <pre><code>// Array inicial
+let letras = ['a', 'b', 'c', 'd', 'e'];
+
+// Removendo elementos
+let removidos = letras.splice(1, 2); // Remove 2 elementos a partir do índice 1
+console.log('Elementos removidos: ' + removidos); // ['b', 'c']
+console.log('Array após remoção: ' + letras); // ['a', 'd', 'e']
+
+// Adicionando elementos
+letras.splice(1, 0, 'x', 'y'); // Adiciona 'x' e 'y' no índice 1
+console.log('Array após adição: ' + letras); // ['a', 'x', 'y', 'd', 'e']
+
+// Substituindo elementos
+removidos = letras.splice(2, 2, 'm', 'n'); // Remove 2 elementos do índice 2 e adiciona 'm' e 'n'
+console.log('Elementos substituídos: ' + removidos); // ['y', 'd']
+console.log('Array após substituição: ' + letras); // ['a', 'x', 'm', 'n', 'e']</code></pre>
+                        <button class="btn-executar" onclick="executarExemplo('exemplo-splice')">Executar Código</button>
+                        <div class="resultado" id="resultado-splice"></div>
+                    </div>
+                </div>
+                
+                <!-- Card 6: Outros métodos úteis -->
+                <div class="tag-card categoria">
+                    <div class="tag-name">Outros Métodos Úteis</div>
+                    <div class="tag-desc">Concat, slice, indexOf, includes e outros métodos importantes.</div>
+                    <div class="tag-example"><code>array.concat(outroArray); array.slice(início, fim);</code></div>
+                    <button class="btn-exemplo" data-target="exemplo-outros">Ver Exemplo</button>
+                    <div id="exemplo-outros" class="exemplo-interativo" style="display:none;">
+                        <h4>Demonstração de outros métodos úteis</h4>
+                        <pre><code>// concat() - Combina arrays
+let arr1 = [1, 2];
+let arr2 = [3, 4];
+let combinado = arr1.concat(arr2);
+console.log('Arrays combinados: ' + combinado); // [1, 2, 3, 4]
+
+// slice() - Extrai parte de um array
+let numeros = [10, 20, 30, 40, 50];
+let parte = numeros.slice(1, 4); // Extrai do índice 1 ao 3
+console.log('Parte do array: ' + parte); // [20, 30, 40]
+
+// indexOf() - Encontra o índice de um elemento
+let frutas = ['maçã', 'banana', 'laranja'];
+let indice = frutas.indexOf('banana');
+console.log('Índice de "banana": ' + indice); // 1
+
+// includes() - Verifica se um elemento existe
+let existe = frutas.includes('uva');
+console.log('"uva" existe no array? ' + existe); // false
+
+// join() - Junta elementos em uma string
+let stringFrutas = frutas.join(', ');
+console.log('String de frutas: ' + stringFrutas); // "maçã, banana, laranja"</code></pre>
+                        <button class="btn-executar" onclick="executarExemplo('exemplo-outros')">Executar Código</button>
+                        <div class="resultado" id="resultado-outros"></div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="#" alt="Logo" class="footer-logo">
+            </div>
+            <div class="footer-center">
+                <p>Conteúdo baseado na documentação da <a href="https://developer.mozilla.org/pt-BR/" target="_blank" rel="noopener">MDN Web Docs</a></p>
+                <p>Licença <a href="https://creativecommons.org/licenses/by-sa/2.5/" target="_blank" rel="noopener">CC-BY-SA 2.5</a></p>
+            </div>
+            <div class="footer-right">
+                <p>&copy; <span id="current-year"></span> Dicionário Web Dev</p>
+                <p>Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

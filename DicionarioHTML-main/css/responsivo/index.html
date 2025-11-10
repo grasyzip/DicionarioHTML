@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Responsivo | Dicionário CSS</title>
+    <link rel="stylesheet" href="../stylesheet.css">
+    <link rel="stylesheet" href="styleres.css">
+    <script src="script.js"></script>
+       <!-- barra de pesuqisa -->
+    <link rel="stylesheet" href="../../stylesearch.css">
+    <script src="../../search.js"></script> 
+    <script src="../../ano.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Design Responsivo</h1>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../index.html">CSS</a></li>
+                <li><a href="../seletores/index.html">Seletores</a></li>
+                <li><a href="../layout/index.html">Layout</a></li>
+                <li><a href="../cores/index.html">Cores & Tipografia</a></li>
+                <li><a href="../efeitos/index.html">Efeitos & Animações</a></li>
+                <li><a href="index.html" class="ativo">Design Responsivo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="conteudo">
+        <section class="intro">
+            <h2>Design Responsivo</h2>
+            <p>Técnicas para criar layouts que se adaptam a diferentes tamanhos de tela.</p>
+        </section>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-box" 
+                   placeholder="Pesquisar seletores (ex: classe, ID)..."
+                   aria-label="Campo de pesquisa">
+        </div>
+        
+        <div class="no-results" id="noResults">
+            <p>Nenhum seletor encontrado com "<span id="searchTerm"></span>"</p>
+            <p>Tente outro termo ou verifique a ortografia.</p>
+        </div>
+
+        <section class="tag-list ">
+
+            <div class="tag-card categoria">
+                <div class="tag-name">Meta Viewport</div>
+                <div class="tag-desc">A tag `&lt;meta name="viewport"&gt;` é essencial para que a página se adapte ao tamanho da tela em dispositivos móveis.</div>
+                <div class="tag-example">
+                    <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>
+                </div>
+            </div>
+
+            <div class="tag-card categoria">
+                <div class="tag-name">Media Queries</div>
+                <div class="tag-desc">Permitem aplicar estilos CSS apenas quando certas condições são verdadeiras, como a largura da tela.</div>
+                <div class="tag-example">
+                    <code>@media (max-width: 768px) { <br>&nbsp;&nbsp;body { font-size: 1.2rem; }<br>}</code>
+                </div>
+                <button class="btn-exemplo" data-target="exemplo-media-query">Ver Exemplo</button>
+                <div id="exemplo-media-query" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de Media Query</h4>
+                    <p>Redimensione a caixa abaixo para ver como os estilos mudam em diferentes tamanhos:</p>
+                    <div class="resizable">
+                        <div class="breakpoint-example">
+                            Este exemplo muda de estilo em diferentes larguras.
+                            <div class="size-feedback">Largura: <span class="width-value">0</span>px</div>
+                        </div>
+                        <div class="resizable-handle"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tag-card categoria">
+                <div class="tag-name">Unidades Relativas</div>
+                <div class="tag-desc">Unidades como `%`, `em`, `rem`, `vw` e `vh` se ajustam ao tamanho do elemento pai ou da viewport.</div>
+                <div class="tag-example">
+                    <code>width: 50%;</code><br>
+                    <code>font-size: 1.2rem;</code><br>
+                    <code>height: 100vh;</code>
+                </div>
+                <button class="btn-exemplo" data-target="exemplo-unidades">Ver Exemplo</button>
+                <div id="exemplo-unidades" class="exemplo-interativo" style="display:none;">
+                    <h4>Demonstração de Unidades Relativas</h4>
+                    <p>Redimensione a caixa abaixo para ver como as unidades relativas se comportam:</p>
+                    <div class="resizable">
+                        <div class="unidades-container">
+                            <div class="unidades-exemplo">
+                                Este texto muda de tamanho conforme a largura do container
+                                <div class="quadrado-exemplo"></div>
+                                <div class="size-feedback">
+                                    Largura container: <span class="width-value">0</span>px | 
+                                    Altura container: <span class="height-value">0</span>px<br>
+                                    Tamanho texto: <span class="font-size-value">0</span>px |
+                                    Largura quadrado: <span class="square-width-value">0</span>px
+                                </div>
+                            </div>
+                        </div>
+                        <div class="resizable-handle"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tag-card categoria">
+                <div class="tag-name">Imagens Flexíveis</div>
+                <div class="tag-desc">Garantir que as imagens se ajustem à largura do contêiner.</div>
+                <div class="tag-example">
+                    <code>img {<br>&nbsp;&nbsp;max-width: 100%;<br>&nbsp;&nbsp;height: auto;<br>}</code>
+                </div>
+            </div>
+        </section>
+    </section>
+    </main>
+
+<footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="../../imgs/logo-cavalo-branco.png" alt="Unisanta Cavalo Branco" class="footer-logo">
+            </div>
+            <div class="footer-center">
+                <p>Conteúdo baseado na documentação da <a href="https://developer.mozilla.org/pt-BR/" target="_blank" rel="noopener">MDN Web Docs</a></p>
+                <p>Licença <a href="https://creativecommons.org/licenses/by-sa/2.5/" target="_blank" rel="noopener">CC-BY-SA 2.5</a></p>
+            </div>
+            <div class="footer-right">
+                <p>&copy; <span id="current-year"></span> Dicionário Web Dev</p>
+                <p>Todos os direitos reservados</p>
+                <p>Agradecimento especiais ao pessoal do setor de <br>TI (Help-Desk) da Unisanta pelas ideias de cores.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

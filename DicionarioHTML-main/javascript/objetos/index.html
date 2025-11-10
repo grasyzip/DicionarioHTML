@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos em JavaScript</title>
+    <link rel="stylesheet" href="../stylesheet.css">
+    <link rel="stylesheet" href="styleobj.css">
+    <script src="script.js" defer></script>
+        <!-- barra de pesuqisa -->
+    <link rel="stylesheet" href="../../stylesearch.css">
+    <script src="/search.js"></script>
+    <script src="/ano.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Dicionário de JavaScript</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="/javascript/index.html">JavaScript</a></li>
+                <li><a href="../sintaxe/index.html">Sintaxe Básica</a></li>
+                <li><a href="../manipulacao/index.html">Manipulação DOM</a></li>
+                <li><a href="../eventos/index.html">Eventos</a></li>
+                <li><a href="../funcoes/index.html">Funções</a></li>
+                <li><a href="../objetos/index.html" class="ativo">Objetos & Arrays</a></li>
+                <li><a href="../async/index.html">Async/Await</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section class="conteudo">
+            <section class="intro">
+                <h2>Objetos em JavaScript</h2>
+                <p>Conceitos fundamentais e estruturas básicas da linguagem JavaScript.</p>
+            </section>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-box" 
+                       placeholder="Pesquisar conceitos (ex: variáveis, funções)..."
+                       aria-label="Campo de pesquisa">
+            </div>
+            
+            <div class="no-results" id="noResults">
+                <p>Nenhum conceito encontrado com "<span id="searchTerm"></span>"</p>
+                <p>Tente outro termo ou verifique a ortografia.</p>
+            </div>
+            
+
+        <div id="saida"></div>
+
+        <button onclick="criarObjeto()">Criar Objeto</button>
+        <button onclick="acessarPropriedades()">Acessar Propriedades</button>
+        <button onclick="usarMetodos()">Usar Métodos</button>
+        <button onclick="criarClasse()">Criar Classe</button>
+
+        <h2>Criação de Objetos</h2>
+        <pre><code>// Notação literal
+        const pessoa = {
+            nome: 'João',
+            idade: 30,
+            profissao: 'Desenvolvedor',
+            saudar: function() {
+                return `Olá, meu nome é ${this.nome}!`;
+            }
+        };
+
+        // Construtor Object
+        const carro = new Object();
+        carro.marca = 'Ford';
+        carro.modelo = 'Mustang';
+
+        // Função construtora
+        function Animal(nome, tipo) {
+            this.nome = nome;
+            this.tipo = tipo;
+            this.emitirSom = function() {
+                return `${this.nome} faz um som!`;
+            };
+        }</code></pre>
+
+        <h2>Classes (ES6+)</h2>
+        <pre><code>class Produto {
+            constructor(nome, preco) {
+                this.nome = nome;
+                this.preco = preco;
+            }
+            
+            descrever() {
+                return `${this.nome} custa R$${this.preco.toFixed(2)}`;
+            }
+            
+            aplicarDesconto(percentual) {
+                this.preco *= (1 - percentual/100);
+            }
+        }</code></pre>
+
+                
+        <!-- Card 4: Objetos -->
+        <div class="card">
+            <div class="card-header">Objetos</div>
+            <div class="card-body">
+                <p>Criação e manipulação de objetos em JavaScript.</p>
+                <div class="card-code">
+// Criando um objeto<br>
+const pessoa = {<br>
+  nome: "Ana",<br>
+  idade: 25,<br>
+  saudacao() {<br>
+    return `Olá, meu nome é ${this.nome}!`;<br>
+  }<br>
+};<br><br>
+
+// Acessando propriedades<br>
+console.log(pessoa.nome); // "Ana"<br>
+console.log(pessoa["idade"]); // 25<br><br>
+
+// Adicionando nova propriedade<br>
+pessoa.profissao = "Desenvolvedora";
+                </div>
+                <div class="card-example">
+                    <button class="card-button" onclick="exemploObjetos()">Executar Exemplo</button>
+                    <div id="objetos-output"></div>
+                </div>
+            </div>
+        </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="../../imgs/logo-cavalo-branco.png" alt="Unisanta Cavalo Branco" class="footer-logo">
+            </div>
+            <div class="footer-center">
+                <p>Conteúdo baseado na documentação da <a href="https://developer.mozilla.org/pt-BR/" target="_blank" rel="noopener">MDN Web Docs</a></p>
+                <p>Licença <a href="https://creativecommons.org/licenses/by-sa/2.5/" target="_blank" rel="noopener">CC-BY-SA 2.5</a></p>
+            </div>
+            <div class="footer-right">
+                <p>&copy; <span id="current-year"></span> Dicionário CSS</p>
+                <p>Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
