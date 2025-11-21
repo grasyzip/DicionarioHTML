@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async & Arrays | Dicionário JavaScript</title>
+    <link rel="stylesheet" href="../stylesheet.css">
+    <link rel="stylesheet" href="../async-arrays/styleasy.css">
+    <script src="../script.js" defer></script>
+    <!-- barra de pesuqisa -->
+    <link rel="stylesheet" href="../../stylesearch.css">
+    <script src="../../search.js"></script>
+    <script src="../../ano.js"></script>
+        <title>Dicionário JavaScript - Async & Arrays</title>
+<body>
+    <header>
+        <h1>Async/Await e Métodos de Arrays</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html">JavaScript</a></li>
+                <li><a href="../sintaxe/index.html">Sintaxe Básica</a></li>
+                <li><a href="../manipulacao/index.html">Manipulação DOM</a></li>
+                <li><a href="../eventos/index.html">Eventos</a></li>
+                <li><a href="../funcoes/index.html">Funções</a></li>
+                <li><a href="../objetos/index.html">Objetos</a></li>
+                <li><a href="../async-arrays/index.html" class="ativo">Manipulação Arrays</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="conteudo">
+            <section class="intro">
+                <h2>Async/Await e Arrays</h2>
+                <p>Combinação de conceitos de programação assíncrona com exemplos práticos de métodos de arrays.</p>
+                    <li><a href="../async-arrays/index.html" class="ativo">Async + Arrays</a></li>
+
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-box" 
+                       placeholder="Pesquisar conceitos (ex: promises, map)..."
+                       aria-label="Campo de pesquisa">
+            </div>
+
+            <div class="no-results" id="noResults">
+                <p>Nenhum conceito encontrado com "<span id="searchTerm"></span>"</p>
+                <p>Tente outro termo ou verifique a ortografia.</p>
+            </div>
+
+            <!-- Section: Async -->
+            <section class="tag-list categorias">
+                <h3>Programação Assíncrona</h3>
+                <div class="tag-card categoria">
+                    <div class="tag-name">Callbacks, Promises e Async/Await</div>
+                    <div class="tag-desc">Callbacks, Promises e async/await para controlar operações assíncronas.</div>
+                    <div class="tag-example">
+                        <code>// Exemplo rápido de async/await
+async function processarDados() {
+  const resultado = await carregarDados();
+  console.log(resultado);
+}
+</code>
+                    </div>
+
+                    <div class="exemplo-interativo">
+                        <h4>Testar Async</h4>
+                        <div>
+                            <button onclick="usarCallbacks()">Usar Callbacks</button>
+                            <button onclick="usarPromises()">Usar Promises</button>
+                            <button onclick="usarAsyncAwait()">Usar Async/Await</button>
+                            <button onclick="buscarPosts()">Buscar Posts da API</button>
+                        </div>
+                        <div id="resultado">Resultados aparecerão aqui...</div>
+                        <div id="posts-container"></div>
+                    </div>
+                    <button class="btn-exemplo" data-target="exemplo-async">Ver Exemplo</button>
+                </div>
+            </section>
+
+            <!-- Section: Arrays -->
+            <section class="tag-list categorias">
+                <h3>Métodos de Arrays</h3>
+                <!-- Keep the array cards from the original arrays page -->
+                <div class="tag-card categoria">
+                    <div class="tag-name">push()</div>
+                    <div class="tag-desc">Adiciona um ou mais elementos ao final de um array e retorna o novo comprimento.</div>
+                    <div class="tag-example"><code>array.push(elemento1, elemento2, ...);</code></div>
+                    <button class="btn-exemplo" data-target="exemplo-push">Ver Exemplo</button>
+                    <div id="exemplo-push" class="exemplo-interativo">
+                        <h4>Demonstração do método push()</h4>
+                        <pre><code>// Array inicial
+let frutas = ['maçã', 'banana'];
+frutas.push('laranja');
+console.log(frutas);</code></pre>
+                        <button class="btn-executar" onclick="executarExemplo('exemplo-push')">Executar Código</button>
+                        <div class="resultado" id="resultado-push"></div>
+                    </div>
+                </div>
+
+                <div class="tag-card categoria">
+                    <div class="tag-name">pop()</div>
+                    <div class="tag-desc">Remove o último elemento de um array e retorna esse elemento.</div>
+                    <div class="tag-example"><code>let ultimoElemento = array.pop();</code></div>
+                    <button class="btn-exemplo" data-target="exemplo-pop">Ver Exemplo</button>
+                    <div id="exemplo-pop" class="exemplo-interativo">
+                        <h4>Demonstração do método pop()</h4>
+                        <pre><code>// Array inicial
+let numeros = [10, 20, 30, 40, 50];
+let removido = numeros.pop();
+console.log(removido);</code></pre>
+                        <button class="btn-executar" onclick="executarExemplo('exemplo-pop')">Executar Código</button>
+                        <div class="resultado" id="resultado-pop"></div>
+                    </div>
+                </div>
+
+                <!-- Other array method cards (unshift, shift, splice, etc.) -->
+                <div class="tag-card categoria">
+                    <div class="tag-name">unshift()</div>
+                    <div class="tag-desc">Adiciona elementos no início do array.</div>
+                    <div class="tag-example"><code>array.unshift(elemento)</code></div>
+                    <button class="btn-exemplo" data-target="exemplo-unshift">Ver Exemplo</button>
+                    <div id="exemplo-unshift" class="exemplo-interativo">
+                        <pre><code>let cores = ['verde','azul'];
+cores.unshift('vermelho');
+console.log(cores);</code></pre>
+                        <button class="btn-executar" onclick="executarExemplo('exemplo-unshift')">Executar Código</button>
+                        <div class="resultado" id="resultado-unshift"></div>
+                    </div>
+                </div>
+
+                <div class="tag-card categoria">
+                    <div class="tag-name">splice()</div>
+                    <div class="tag-desc">Adiciona, remove ou substitui elementos em qualquer posição.</div>
+                    <div class="tag-example"><code>array.splice(início, quantidade, ...itens)</code></div>
+                    <button class="btn-exemplo" data-target="exemplo-splice">Ver Exemplo</button>
+                    <div id="exemplo-splice" class="exemplo-interativo">
+                        <pre><code>let letras = ['a','b','c','d'];
+letras.splice(1,2);
+console.log(letras);</code></pre>
+                        <button class="btn-executar" onclick="executarExemplo('exemplo-splice')">Executar Código</button>
+                        <div class="resultado" id="resultado-splice"></div>
+                    </div>
+                </div>
+
+                <div class="tag-card categoria">
+                    <div class="tag-name">Outros Métodos</div>
+                    <div class="tag-desc">map, filter, reduce, concat, slice, includes, indexOf, join.</div>
+                    <div class="tag-example"><code>array.map(fn); array.filter(fn); array.reduce(fn, init);</code></div>
+                    <button class="btn-exemplo" data-target="exemplo-outros">Ver Exemplo</button>
+                    <div id="exemplo-outros" class="exemplo-interativo">
+                        <pre><code>let arr1 = [1,2];
+let arr2 = [3,4];
+console.log(arr1.concat(arr2));
+console.log([1,2,3].map(n => n*2));</code></pre>
+                        <button class="btn-executar" onclick="executarExemplo('exemplo-outros')">Executar Código</button>
+                        <div class="resultado" id="resultado-outros"></div>
+                    </div>
+                </div>
+            </section>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="../../imgs/logo-cavalo-branco.png" alt="Unisanta Cavalo Branco" class="footer-logo">
+            </div>
+            <div class="footer-center">
+                <p>Conteúdo baseado na documentação da <a href="https://developer.mozilla.org/pt-BR/" target="_blank" rel="noopener">MDN Web Docs</a></p>
+                <p>Licença <a href="https://creativecommons.org/licenses/by-sa/2.5/" target="_blank" rel="noopener">CC-BY-SA 2.5</a></p>
+            </div>
+            <div class="footer-right">
+                <p>&copy; <span id="current-year"></span> Dicionário Web Dev</p>
+                <p>Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

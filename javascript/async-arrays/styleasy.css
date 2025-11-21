@@ -1,0 +1,84 @@
+/* Additional CSS for async-arrays page */
+.exemplo-interativo {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+}
+
+.btn-executar {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.btn-executar:hover {
+    background-color: #218838;
+}
+
+.resultado {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+.resultado.sucesso {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.resultado.erro {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+.post-item {
+    background: white;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #6f42c1;
+}
+
+.post-item h5 {
+    margin: 0 0 10px 0;
+    color: #6f42c1;
+}
+
+.search-highlight {
+    background-color: #ffeb3b !important;
+    padding: 2px 0;
+}
+
+.no-results {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+/* Button styles for async examples */
+.exemplo-interativo button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.exemplo-interativo button:hover {
+    background-color: #0056b3;
+}
